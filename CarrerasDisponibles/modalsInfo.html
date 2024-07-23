@@ -1,0 +1,830 @@
+<!-- Modal Lic en Ciencias de la Computacion con Modal-->
+<div class="modal fade" id="ModalLC" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-between align-items-center">
+                <h5 class="modal-title" id="exampleModalLabel">Información algunas conceptos de la informática</h5>
+                <div>
+                  <i class="bi bi-filetype-pdf" type="button" onclick="generarPDFCD(4)">Descargar PDF</i>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+            </div>
+            <div class="modal-body">
+              <strong>Que vas a aprender si estudias la carrera de Licenciatura en Ciencia de la Computación</strong>
+              <p>Esta carrera esta enfocada mas a la teoria y aplicacion de la informática. Por lo tanto vas a adquirir conocimientos preparándote en:</p>
+              <p>
+                <strong>Programación.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal61',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal61',2)">Leer más
+                </a>
+              </p>
+              
+              <p>
+                <strong>Ámbito de investigación(como Inteligencia Artificial).</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal10',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal10',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>En Áreas informáticas de organizaciones.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal11',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal11',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Formar parte de un equipo de desarrollo de Software.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal12',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal12',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>También puedas dar enseñanzas Universitaria y capacitación en ciencias de la computación.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal13',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal13',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Duración de 5 años.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModalDuracionLC',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Con posibilidad de obtener un título intermedio 3 años de Analista Programador Universitario que habilita actuar profesionalmente tanto en industrias como en organismos nacionales y privados de todo el país.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal14',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal14',2)">Leer más
+                </a>
+              </p>
+
+            <h6>Para obtener más información sobre la carrera, inscripción y cuando comienza la cursada haz clic en "Me interesa".</h6>
+              
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="sendResultsQQ('Licenciatura en Ciencia de la Computación', false)">No me interesa</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="sendResultsQQ('Licenciatura en Ciencia de la Computación', true, 4)">Me interesa</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Profesorado en Ciencia de la Computacion con Modal -->
+<div class="modal fade" id="ModalPC" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-between align-items-center">
+                <h5 class="modal-title" id="exampleModalLabel">Información algunas conceptos de la informática</h5>
+                <div>
+                  <i class="bi bi-filetype-pdf" type="button" onclick="generarPDFCD(3)">Descargar PDF</i>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+            </div>
+            <div class="modal-body">
+              <strong>Que vas a aprender si estudias la carrera de Profesorado en Ciencia de la Computación</strong>
+              <p>Esta carrera esta enfocada mas a la teoria para poder enseñar temas relacionados con la informática y la tecnología. Por lo tanto vas a adquirir conocimientos preparándote en:</p>
+              <p>
+                <strong>Trasmitir enseñanzas de la informática en todos los niveles.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal5',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal5',2)">Leer más
+                </a>
+              </p>
+              
+              <p>
+                <strong>Realizar investigación con fines educativos.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal6',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal6',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Desarrollo de Software Educativo.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal7',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal7',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Asesoría y consultoría a empresas, instituciones educativas o gubernamentales.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal8',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal8',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Duración de 4 años.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal9',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal9',2)">Leer más
+                </a>
+              </p>
+
+              <h6>Para obtener más información sobre la carrera, inscripción y cuando comienza la cursada haz clic en "Me interesa".</h6>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="sendResultsQQ('Profesorado en Ciencias de la Computación', false)">No me interesa</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="sendResultsQQ('Profesorado en Ciencias de la Computación', true, 3)">Me interesa</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Ingeneria en Informatica de trabajo con Modal -->
+<div class="modal fade" id="ModalIF" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-between align-items-center">
+                <h5 class="modal-title" id="exampleModalLabel">Información algunas conceptos de la informática</h5>
+                <div>
+                  <i class="bi bi-filetype-pdf" type="button" onclick="generarPDFCD(5)">Descargar PDF</i>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+            </div>
+            <div class="modal-body">
+              <strong>Que vas a aprender si estudias la carrera de Ingeniería en Informática</strong>
+              <p>Esta carrera esta enfocada mas a la practica para obtener habilidades para diseñar, desarrollar y gestionar sistemas informáticos. Por lo tanto vas a adquirir conocimientos preparándote en:</p>
+              <p>
+                <strong>Programación de alto nivel.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal38',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal38',2)">Leer más
+                </a>
+              </p>
+              
+              <p>
+                <strong>Desarrollador de software (como juegos por ejemplo).</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal39',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal39',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Programacion para paginas web y para aplicaciones para móvil.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal40',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal40',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Conceptos de Inteligencia Artificial.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal42',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal42',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Software de base de datos.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal43',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal43',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Seguridad Informática.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal44',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal44',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Desarrollar, gestionar o controlar proyectos de Software teniendo en cuenta el costo y tiempo.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal46',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal46',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Duración de 5 años.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModalDuracionLC',2)">Leer más
+                </a>
+              </p>
+
+            <h6>Para obtener más información sobre la carrera, inscripción y cuando comienza la cursada haz clic en "Me interesa".</h6>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="sendResultsQQ('Ingeniería en Informática', false)">No me interesa</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="sendResultsQQ('Ingeniería en Informática', true, 5)">Me interesa</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Ingeneria en Computacion con Modal -->
+<div class="modal fade" id="ModalIC" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-between align-items-center">
+                <h5 class="modal-title" id="exampleModalLabel">Información algunas conceptos de la informática</h5>
+                <div>
+                  <i class="bi bi-filetype-pdf" type="button" onclick="generarPDFCD(6)">Descargar PDF</i>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+            </div>
+            <div class="modal-body">
+              <strong>Que vas a aprender si estudias la carrera de Ingeniería en Computación</strong>
+              <p>Esta carrera esta enfocada mas a la practica para obtener habilidades para diseñar, desarrollar y optimizar sistemas computacionales. Por lo tanto vas a adquirir conocimientos preparándote en:</p>
+              <p>
+                <strong>Redes de Computadora.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal50',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal50',2)">Leer más
+                </a>
+              </p>
+              
+              <p>
+                <strong>Sistema de Comunicación.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal51',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal51',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Arquitectura de PC.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal52',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal52',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Sistemas Digitales.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal53',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal53',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Software Base.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal54',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal54',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Programación de bajo nivel.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal55',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal55',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Desarrollar, gestionar o controla arquitectura de computadoras, componentes electrónicos, la gestión de redes y comunicaciones, señales digitales. Teniendo en cuenta el costo y tiempo.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal57',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal57',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Seguridad Informática en productos de hardware y software.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal59',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal59',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Duración de 5 años.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModalDuracionLC',2)">Leer más
+                </a>
+              </p>
+              <h6>Para obtener más información sobre la carrera, inscripción y cuando comienza la cursada haz clic en "Me interesa".</h6>
+
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="sendResultsQQ('Ingeniería en Computación', false)">No me interesa</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="sendResultsQQ('Ingeniería en Computación', true, 6)">Me interesa</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tecnicatura Web con Modal -->
+<div class="modal fade" id="ModalTW" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-between align-items-center">
+                <h5 class="modal-title" id="exampleModalLabel">Información algunas conceptos de la informática</h5>
+                <div>
+                  <i class="bi bi-filetype-pdf" type="button" onclick="generarPDFCD(1)">Descargar PDF</i>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+            </div>
+            <div class="modal-body">
+              <strong>Que vas a aprender si estudias la carrera de Tecnicatura Universitaria en Web</strong>
+              <p>Esta carrera esta enfocada mas a la practica para obtener habilidades específicas para el diseño, desarrollo y mantenimiento de sitios web. Por lo tanto vas a adquirir conocimientos preparándote en:</p>
+              <p>
+                <strong>Programación para paginas Web.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal15',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal15',2)">Leer más
+                </a>
+              </p>
+              
+              <p>
+                <strong>Desarrollar aplicaciones para dispositivos móviles.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal24',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal24',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Diseño Responsivo.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal17',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal17',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Protocolos y APIs.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal18',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal18',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Programación de alto nivel.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal20',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal20',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Usos de herramientas informática para el desarrollo web.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal21',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal21',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Software de bases de datos.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal22',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal22',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Dar asesoramiento técnico.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal25',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal25',2)">Leer más
+                </a>
+              </p>
+
+              <p>
+                <strong>Duración de 3 años.</strong>
+                <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('',2)"></i> -->
+                <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModalDuracionTec',2)">Leer más
+                </a>
+              </p>
+              <h6>Para obtener más información sobre la carrera, inscripción y cuando comienza la cursada haz clic en "Me interesa".</h6>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="sendResultsQQ('Tecnicatura Universitaria en Web', false)">No me interesa</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="sendResultsQQ('Tecnicatura Universitaria en Web', true, 1)">Me interesa</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Tecnicatura Universitaria en Redes de Computadoras con Modal -->
+<div class="modal fade" id="ModalTR" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
+      <div class="modal-content">
+          <div class="modal-header d-flex justify-content-between align-items-center">
+              <h5 class="modal-title" id="exampleModalLabel">Información algunas conceptos de la informática</h5>
+              <div>
+                <i class="bi bi-filetype-pdf" type="button" onclick="generarPDFCD(2)">Descargar PDF</i>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+          </div>
+          <div class="modal-body">
+            <strong>Que vas a aprender si estudias la carrera de Tecnicatura Universitaria en Redes de Computadoras</strong>
+            <p>Esta carrera esta enfocada mas a la practica para obtener habilidades específicas para diseñar, implementar y mantener redes informáticas. Por lo tanto vas a adquirir conocimientos preparándote en:</p>
+            
+            <p>
+              <strong>Redes de computadora.</strong>
+              <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal28',2)"></i> -->
+              <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal28',2)">Leer más
+              </a>
+            </p>
+
+            <p>
+              <strong>Programación de bajo nivel</strong>
+              <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal29',2)"></i> -->
+              <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal29',2)">Leer más
+              </a>
+            </p>
+
+            <p>
+              <strong>Programación para redes.</strong>
+              <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal30',2)"></i> -->
+              <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal30',2)">Leer más
+              </a>
+            </p>
+
+            <p>
+              <strong>Sistemas Digitales.</strong>
+              <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal32',2)"></i> -->
+              <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal32',2)">Leer más
+              </a>
+            </p>
+
+            <p>
+              <strong>Sistema de Comunicación.</strong>
+              <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal33',2)"></i> -->
+              <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal33',2)">Leer más
+              </a>
+            </p>
+
+            <p>
+              <strong>Mantenimiento de redes.</strong>
+              <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal35',2)"></i> -->
+              <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal35',2)">Leer más
+              </a>
+            </p>
+
+            <p>
+              <strong>Desarrollar dispositivos de redes.</strong>
+              <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal36',2)"></i> -->
+              <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal36',2)">Leer más
+              </a>
+            </p>
+
+            <p>
+              <strong>Diseño, instalación y configuración de redes de computadora.</strong>
+              <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal37',2)"></i> -->
+              <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModal37',2)">Leer más
+              </a>
+            </p>
+
+            <p>
+              <strong>Duración de 3 años.</strong>
+              <!-- &nbsp; <i class="bi bi-info-square" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('',2)"></i> -->
+              <a class="icon-link icon-link-hover" style="font-weight: lighter; font-size: 1rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal" value="botonModal1" id="botonModal1" onclick="modalFunctionQQ('myModalDuracionTec',2)">Leer más
+              </a>
+            </p>
+            <h6>Para obtener más información sobre la carrera, inscripción y cuando comienza la cursada haz clic en "Me interesa".</h6>
+
+          <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="sendResultsQQ('Tecnicatura Universitaria en Redes de Computadoras', false)">No me interesa</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="sendResultsQQ('Tecnicatura Universitaria en Redes de Computadoras', true, 2)">Me interesa</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Modal de finalizcion -->
+<div class="modal fade" id="modalFinalizacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+      <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel">Test Vocacional: Área de Informática</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <div class="container mt-3">
+          <!-- Aquí inserta tu contenido dentro de un div -->
+              <h4>¡Muchas gracias por tu respuesta!</h4>
+              
+              <!-- <h5>En unos momentos debería estar llegando a su email proporcionado <span id="emailEnModal" color="blue"></span> todos los detalles solicitados de la carrera.</h5> -->
+              <h5>La información referente a la carrara sera enviada a su correo <span id="emailEnModal" color="blue"></span>.</h5>
+          </div>
+
+          <div class="d-flex justify-content-between modal-footer">
+              <!-- <button type="button" class="btn btn-primary" onclick="enviarCorreo()">Enviar Correo</button> -->
+              <button type="button" class="btn btn-primary" onclick="reloadPage()">Finalizar</button>
+              
+          </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+<!-- Modal en caso de que no acepte la carrera -->
+<div class="modal fade" id="modalNoInteres" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+      <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel">Test Vocacional: Área de Informática</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <div class="container mt-3">
+          <!-- Aquí inserta tu contenido dentro de un div -->
+              <h4>¡Muchas gracias por tu respuesta!</h4>
+              
+              <h5>Lo sentimos que la carrera no sea lo esperado, no te preocupes. Puedes mirar otras opciones de carreras.</h5>
+          </div>
+
+          <div class="d-flex justify-content-between modal-footer">
+              <!-- <button type="button" class="btn btn-primary" onclick="reloadPage()">Reiniciar</button> -->
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+              
+          </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+<style>
+  #emailEnModal {
+      color: blue;
+  }
+</style>
+
+<!-- PDF TW -->
+<div id="tableTW">
+  <h3>Estimación: <strong>Tecnicatura Universitaria en Web</strong></h3>
+  <h5><strong>Duración:</strong> 3 años</h5>
+  <h6>Lo que debes saber acerca de la carrera:</h6>
+  <table class="table">
+
+      <tbody>
+          <thead>
+              <tr>
+                  <th scope="col"><strong>Programación</strong></th>
+                  <th scope="col"><strong>Horario de cursada</strong></th>
+                  <th scope="col"><strong>Salida laboral</strong></th>
+                  <th scope="col"><strong>Etapa Final</strong></th>
+              </tr>
+              </thead>
+          <tr>
+              <td>          
+                  Veras más orientado al alto Nivel como por ejemplo:
+                  <ul>
+                      <li>HTML</li>
+                      <li>CSS</li>
+                      <li>JavaScript</li>
+                      <li>Frameworks y Bibliotecas como React</li>
+                      <li>Bases de datos</li>
+                      <li>Git y GitHub</li>
+                  </ul>                
+              </td>
+              <td>
+                  Generalmente son en la tarde y la noche
+              </td>
+              <td>
+                  <li>Desarrollador de Software Web y de aplicaciones móviles</li>
+                  <li>Dar asesoramiento técnico</li>
+                  <li>Brindar seguridad en Web</li>
+              </td>
+              <td>
+                  Práctica Técnica Supervisada
+              </td>
+          </tr>
+      </tbody>
+      </table>
+</div>
+
+<!-- PDF TR -->
+<div id="tableTR">
+  <h3>Estimación: <strong>Tecnicatura Universitaria en Redes de Computadoras</strong></h3>
+  <h5><strong>Duración:</strong> 3 años</h5>
+  <h6>Lo que debes saber acerca de la carrera:</h6>
+  <table class="table">
+      <tbody>
+          <thead>
+              <tr>
+                  <th scope="col"><strong>Programación</strong></th>
+                  <th scope="col"><strong>Horario de cursada</strong></th>
+                  <th scope="col"><strong>Salida laboral</strong></th>
+                  <th scope="col"><strong>Etapa Final</strong></th>
+              </tr>
+              </thead>
+          <tr>
+              <td>          
+                  Veras mas lenguajes y herramientas que te permitan comprender, mantener y solucionar problemas en entornos de redes en tareas de redes como por ejemplo:
+                  <ul>
+                      <li>Python</li>
+                      <li>Java</li>
+                      <li>Sistemas Operativos de Redes</li>
+                      <li>Bash scripting</li>
+                      <li>Wireshark</li>
+                      <li>GNS3 (Graphical Network Simulator-3)</li>
+                      <li>Cisco packet tracer</li>
+                  </ul>               
+              </td>
+              <td>
+                  Generalmente son en la tarde y la noche
+              </td>
+              <td>
+                  <li>Asesoramiento técnico</li>
+                  <li>Mantenimiento de redes</li>
+                  <li>Desarrollar dispositivos de redes</li>
+                  <li>Diseño, instalación y configuración de redes de computadora</li>
+              </td>
+              <td>
+                  Práctica Técnica Supervisada
+              </td>
+          </tr>
+      </tbody>
+      </table>
+</div>
+
+<!-- PDF PC -->
+<div id="tablePC">
+  <h3>Estimación: <strong>Profesorado en Ciencias de la Computación</strong></h3>
+  <h5><strong>Duración:</strong> 4 años</h5>
+  <h6>Lo que debes saber acerca de la carrera:</h6>
+  <table class="table">
+
+      <tbody>
+          <thead>
+              <tr>
+                  <th scope="col"><strong>Programación</strong></th>
+                  <th scope="col"><strong>Horario de cursada</strong></th>
+                  <th scope="col"><strong>Salida laboral</strong></th>
+                  <th scope="col"><strong>Etapa Final</strong></th>
+              </tr>
+              </thead>
+          <tr>
+              <td>          
+                  Veras lenguajes y herramientas que te permitan comprender, mantener y solucionar problemas en el área de educativa como por ejemplo:
+                  <ul>
+                      <li>Java</li>
+                      <li>C, C++</li>
+                      <li>Prolog</li>
+                      <li>Bases de datos como MySql, postgresql</li>
+                      <li>Programación funcional como Haskell</li>
+                      <li>Assembly</li>
+                      <li>Software educativo como App Inventor</li>
+                  </ul>               
+              </td>
+              <td>
+                  Generalmente los horarios de la materia entan dividos entre mañana, tarde y noche
+              </td>
+              <td>
+                  <li>Poder ejercer la docencia en informática en todos los niveles.</li>
+                  <li>Realizar investigación con fines educativos.</li>
+                  <li>Asesoría y consultoría a empresas, instituciones educativas o gubernamentales.</li>
+                  <li>Desarrollo de Software Educativo.</li>
+              </td>
+              <td>
+                  <li>Actividades acreditables en docencia</li>
+                  <li>Actividades acreditables en extensión</li>
+                  <li>Actividades acreditables en investigación</li>
+              </td>
+          </tr>
+      </tbody>
+      </table>
+</div>
+
+<!-- PDF LC -->
+<div id="tableLC">
+  <h3>Estimación: <strong>Licenciatura en Ciencia de la Computación</strong></h3>
+  <h5><strong>Duración:</strong> 5 años</h5>
+  <h6>Lo que debes saber acerca de la carrera:</h6>
+  <table class="table">
+
+      <tbody>
+          <thead>
+              <tr>
+                  <th scope="col"><strong>Programación</strong></th>
+                  <th scope="col"><strong>Horario de cursada</strong></th>
+                  <th scope="col"><strong>Salida laboral</strong></th>
+                  <th scope="col"><strong>Etapa Final</strong></th>
+              </tr>
+              </thead>
+          <tr>
+              <td>          
+                  Veras lenguajes y herramientas que te permitan comprender, mantener y solucionar problemas en el área de investigación como por ejemplo:
+                  <ul>
+                      <li>Java</li>
+                      <li>C, C++</li>
+                      <li>Prolog</li>
+                      <li>Bases de datos como MySql, postgresql</li> 
+                      <li>Programación funcional como Haskell</li>
+                      <li>Assembly</li>
+                      <li>Arena Simulation para simulación</li>
+                      <li>Cisco packet tracer</li>
+                  </ul>               
+              </td>
+              <td>
+                  Generalmente los horarios de la materia entan dividos entre mañana, tarde y noche
+              </td>
+              <td>
+                  <li>Ámbito de investigación</li>
+                  <li>Áreas informáticas de organizaciones</li>
+                  <li>Formar parte de un equipo de desarrollo de Software</li>
+                  <li>Enseñanzas Universitaria y capacitación en ciencias de la computación</li>
+              </td>
+              <td>
+                  <li>Trabajo Final</li>
+                  <li>Práctica de Investigación Supervisada</li>
+              </td>
+          </tr>
+      </tbody>
+      </table>
+</div>
+
+<!-- PDF II -->
+<div id="tableII">
+  <h3>Estimación: <strong>Ingeniería en Informática</strong></h3>
+  <h5><strong>Duración:</strong> 5 años</h5>
+  <h6>Lo que debes saber acerca de la carrera:</h6>
+  <table class="table">
+
+      <tbody>
+          <thead>
+              <tr>
+                  <th scope="col"><strong>Programación</strong></th>
+                  <th scope="col"><strong>Horario de cursada</strong></th>
+                  <th scope="col"><strong>Salida laboral</strong></th>
+                  <th scope="col"><strong>Etapa Final</strong></th>
+              </tr>
+              </thead>
+          <tr>
+              <td>          
+                  Veras mas lenguajes y herramientas que te permitan comprender, mantener y solucionar problemas en entornos de industria de software como por ejemplo:
+                  <ul>
+                      <li>Python</li>
+                      <li>Java</li>
+                      <li>C, C++</li>
+                      <li>Prolog</li>
+                      <li>HTML</li>
+                      <li>CSS</li>
+                      <li>Javascript</li>
+                      <li>Frameworks y Bibliotecas como React, CodeIgniter, etc</li>
+                      <li>Bases de datos como MySql, postgresql</li>
+                      <li>Programación funcional como Haskell</li>
+                  </ul>               
+              </td>
+              <td>
+                  Generalmente los horarios de la materia entan dividos entre mañana, tarde y noche
+              </td>
+              <td>
+                  <li>Desarrollar, gestionar o controlar Proyectos de Software teniendo en cuenta el costo y tiempo.</li>
+                  <li>Aplicar la ciencia de la tecnología en mejorar productos de software ya existentes</li>
+                  <li>Seguridad Informática en Software</li>
+                  <li>Participar en asuntos legales, económicos y financieros en el área de software</li>
+              </td>
+              <td>
+                  <li>Trabajo Final</li>
+                  <li>Práctica Profesional Supervisada</li>
+              </td>
+          </tr>
+      </tbody>
+      </table>
+</div>
+
+<!-- PDF IC -->
+<div id="tableIC">
+  <h3>Estimación: <strong>Ingeniería en Computación</strong></h3>
+  <h5><strong>Duración:</strong> 5 años</h5>
+  <h6>Lo que debes saber acerca de la carrera:</h6>
+  <table class="table">
+
+      <tbody>
+          <thead>
+              <tr>
+                  <th scope="col"><strong>Programación</strong></th>
+                  <th scope="col"><strong>Horario de cursada</strong></th>
+                  <th scope="col"><strong>Salida laboral</strong></th>
+                  <th scope="col"><strong>Etapa Final</strong></th>
+              </tr>
+              </thead>
+          <tr>
+              <td>          
+                  Veras mas lenguajes y herramientas que te permitan comprender, mantener y solucionar problemas, como por ejemplo:
+                  <ul>
+                      <li>Python</li>
+                      <li>Java</li>
+                      <li>C, C++</li>
+                      <li>Assembly</li>
+                      <li>Sistemas Operativos de Redes</li>
+                      <li>Bash scripting</li>
+                      <li>Wireshark</li>
+                      <li>GNS3 (Graphical Network Simulator-3)</li>
+                      <li>Cisco packet tracer</li>
+                      <li>Bases de datos como MySql, postgresql</li>
+                      <li>Programación funcional como Haskell</li>
+                  </ul>               
+              </td>
+              <td>
+                  Generalmente los horarios de la materia entan dividos entre mañana, tarde y noche
+              </td>
+              <td>
+                  <li>Desarrollar, gestionar o controla arquitectura de computadoras, componentes electrónicos, la gestión de redes y comunicaciones, señales digitales. Teniendo en cuenta el costo y tiempo.</li>
+                  <li>Aplicar la ciencia de la tecnología en mejorar productos de hardware y software ya existentes.</li>
+                  <li>Seguridad Informática en productos de hardware y software</li>
+                  <li>Participar en asuntos legales, económicos y financieros en el área.</li>
+              </td>
+              <td>
+                  <li>Trabajo Final</li>
+                  <li>Práctica Profesional Supervisada</li>
+              </td>
+          </tr>
+      </tbody>
+      </table>
+</div>

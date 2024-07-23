@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de aspirantes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Preguntas/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+</head>
+<body>
+    <header class="card-header header">
+        <h5>Test Vocacional: Área Informática</h5>
+    </header>
+    <main>
+        <div class="container mt-4 ">
+            <form style="max-width: 400px; margin: auto;">
+                <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input type="email" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">Nunca compartiremos su email con nadie más.</div>
+                </div>
+                <div class="mb-3">
+                <label for="exampleInputEdad" class="form-label">Edad</label>
+                <input type="number" min="15" max="120" step="1" class="form-control form-control-sm" id="exampleEdad">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">¿Eres residente de Argentina?</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="residenteRadio" id="residenteSi" checked>
+                        <label class="form-check-label" for="residenteSi" >Sí</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="residenteRadio" id="residenteNo">
+                        <label class="form-check-label" for="residenteNo">No</label>
+                    </div>
+                </div>
+                <div id="paisOrigen" style="display: none;">
+                    <div class="mb-3">
+                        <label for="paisOrigenInput" class="form-label">País de Origen</label>
+                        <input type="text" class="form-control form-control-sm" id="paisOrigenInput">
+                    </div>
+                </div>
+                <div id="provinciaArg" style="display: none;">
+                    <div class="mb-3">
+                        <label for="exampleProvince" class="form-label">Provincia</label>
+                        <select class="form-select form-select-sm" id="exampleProvince"></select>
+                    </div>
+                </div>
+                <div id="schoolArg" style="display: none;">
+                    <div class="mb-3">
+                        <label for="exampleSchool" class="form-label">Escuela de donde provienes</label>
+                        <select class="form-select form-select-sm selectpicker show-tick"  data-live-search="true" data-width="100%" data-size="10" id="exampleSchool" name="exampleSchool" title='Seleccione una Escuela...'>
+                        </select>
+                    </div>
+                    <div id="otherSchoolInput" style="display: none;">
+                        <label for="otherSchool" class="form-label">Ingrese Escuela</label>
+                        <input type="text" class="form-control" id="otherSchool" name="otherSchool">
+                    </div>
+                    &nbsp;&nbsp;
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="d-flex justify-content-between">
+                            <button type="button" class="btn btn-primary" onclick="validarCampos(1)">Realizar Test Vocacional</button>
+                            <button type="button" class="btn btn-primary" onclick="validarCampos(2)">Consultar por una carrera</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col">
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-outline-primary w-100" onclick="volver()">Volver</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+    </main>
+    
+
+    <footer class="text-center footer" id="footer1">
+        <div class="container">
+            <h7>Hecho por Braian Paez - UNSL</h7>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="modalErrorCampos" name="modalErrorCampos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Error en el registro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    No es posible continuar con el resgistro. Por favor, complete todos los campos antes de continuar.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalErrorEdad" name="modalErrorEdad" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Error en el registro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Para poder realizar este este debes ser mayor de 16 años.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalEmailValido" name="modalEmailValido" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Error en el registro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Debe ingresar un email valido.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script src="url.js"></script>
+    <script src="school.js"></script>
+    <script>
+        const radioSi = document.getElementById('residenteSi');
+        const radioNo = document.getElementById('residenteNo');
+        const paisOrigen = document.getElementById('paisOrigen');
+        const paisOrigenInput = document.getElementById('paisOrigenInput'); // Referencia al campo de entrada
+        const provinciaArg = document.getElementById('provinciaArg');
+        const schoolArg = document.getElementById('schoolArg');  
+
+        let flagDatos = localStorage.getItem('flagDatos');
+        
+        if(radioSi.checked == true){
+            provinciaArg.style.display = 'block';
+        }
+
+        radioSi.addEventListener('change', function () {
+            paisOrigen.style.display = 'none';
+            paisOrigenInput.value = "";
+            provinciaArg.style.display = 'block';
+            updateSchoolVisibility();
+        });
+
+        radioNo.addEventListener('change', function () {
+            paisOrigen.style.display = 'block';
+            provinciaArg.style.display = 'none';
+            schoolArg.style.display = 'none';
+            resetSchoolSelect();
+        });
+
+        // Array de provincias
+        var provincias = ["Buenos Aires",    "Catamarca",    "Chaco",    "Chubut",    "Ciudad Autónoma de Buenos Aires",    "Córdoba",    "Corrientes",    "Entre Ríos",    "Formosa",    "Jujuy",    "La Pampa",    "La Rioja",    "Mendoza",    "Misiones",    "Neuquén",    "Río Negro",    "Salta",    "San Juan",    "San Luis",    "Santa Cruz",    "Santa Fe",    "Santiago del Estero",    "Tierra del Fuego, Antártida e Islas del Atlántico Sur",    "Tucumán"];
+
+
+        // Obtener el elemento select
+        var selectProvincia = document.getElementById("exampleProvince");
+        var selectSchool = document.getElementById("exampleSchool");
+
+        // Agregar opciones al select
+        for (var i = 0; i < provincias.length; i++) {
+            var option = document.createElement("option");
+            option.text = provincias[i];
+            selectProvincia.add(option);
+        }
+        
+        
+        // fetch('https://apis.datos.gob.ar/georef/api/provincias')
+        // .then(response => response.json())
+        // .then(data => {
+        //     const select = document.getElementById('exampleProvince');
+        //     data.provincias.forEach(province => {
+        //         const option = document.createElement('option');
+        //         option.value = province.nombre;
+        //         option.textContent = province.nombre;
+        //         select.appendChild(option);
+        //     });
+        // })
+        // .catch(error => console.log(error));
+        
+        function validarEmail(email) {
+            // Verificar si se ha ingresado un email válido
+            const emailValido = /\S+@\S+(\.com|\.net|\.org|\.edu)/.test(email);
+
+            // Devolver true si el email es válido, false de lo contrario
+            return emailValido;
+        }
+
+        function obtenerFechaActual() {
+            const fechaActual = new Date();
+            
+            // Obtén los componentes de la fecha
+            const dia = fechaActual.getUTCDate() + 1;
+            const mes = fechaActual.getUTCMonth() + 1; // Los meses en JavaScript van de 0 a 11
+            const anio = fechaActual.getUTCFullYear();
+
+            // Formatea la fecha como "YYYY-MM-DD" (puedes ajustar el formato según tus necesidades)
+            const fechaFormateada = `${anio}-${mes < 10 ? '0' : ''}${mes}-${dia < 10 ? '0' : ''}${dia}`;
+
+            return fechaFormateada;
+        }
+
+        function validarCampos(option) {
+            const email = document.getElementById('exampleInputEmail1').value;
+            const edad = document.getElementById('exampleEdad').value;
+            const edadCheck = parseInt(edad, 10); 
+            const residenteSi = document.getElementById('residenteSi').checked;
+            const residenteNo = document.getElementById('residenteNo').checked;
+
+            var esResidenteArg = document.getElementById('residenteSi').checked;
+            var paisOrigen = document.getElementById('paisOrigenInput').value;
+            var provinciaArg = document.getElementById('exampleProvince').value;
+            var schoolInSanLuis = document.getElementById("exampleSchool").value;
+            var otherSchool = document.getElementById('otherSchool').value;
+
+            console.log('Email:', email);
+            console.log('Edad:', edad);
+            console.log('Es residente de Argentina:', esResidenteArg);
+            console.log('País de Origen:', paisOrigen);
+            console.log('Provincia en Argentina:', provinciaArg);
+            console.log('escuela de San Luis ssss:', schoolInSanLuis);
+            console.log('escuela de San Luis no puesto en la lista es:', otherSchool);
+            // edad.trim() === '' 
+
+            if (validarEmail(email.trim()) === false || email.trim() === '' || (!residenteSi && !residenteNo) || isNaN(edadCheck) || edadCheck <= 16 || provinciaArg.trim() === 'San Luis' && schoolInSanLuis.trim() === '' ||  provinciaArg.trim() === 'San Luis' && schoolInSanLuis.trim() === 'OTRO' && otherSchool.trim() === '') {
+                if(email.trim() === '' || (!residenteSi && !residenteNo) || isNaN(edadCheck) || provinciaArg.trim() === 'San Luis' && schoolInSanLuis.trim() === '' || provinciaArg.trim() === 'San Luis' && schoolInSanLuis.trim() === 'OTRO' && otherSchool.trim() === ''){
+                    // alert('Por favor, complete todos los campos antes de continuar.');
+                    // Obtener el modal deseado por su ID
+                    const modalContent = document.getElementById("modalErrorCampos");
+                
+                    // Verificar si se encontró el modal
+                    if (modalContent) {          
+                        // Crear un nuevo div para el modal
+                        const modalWrapper = document.createElement('div');
+                        modalWrapper.appendChild(modalContent.cloneNode(true));
+
+                        // Adjuntar el nuevo div al cuerpo del documento
+                        document.body.appendChild(modalWrapper);
+
+                        // Mostrar el modal usando jQuery
+                        $(modalWrapper.firstChild).modal('show');
+                    }
+                }
+                else{
+                    if(validarEmail(email.trim()) === false){
+                        const modalContent = document.getElementById("modalEmailValido");
+                    
+                        // Verificar si se encontró el modal
+                        if (modalContent) {          
+                            // Crear un nuevo div para el modal
+                            const modalWrapper = document.createElement('div');
+                            modalWrapper.appendChild(modalContent.cloneNode(true));
+
+                            // Adjuntar el nuevo div al cuerpo del documento
+                            document.body.appendChild(modalWrapper);
+
+                            // Mostrar el modal usando jQuery
+                            $(modalWrapper.firstChild).modal('show');
+                        }
+                    }else{
+                        if(edadCheck <= 15){
+                            // alert('Para poder realizar este este debes ser mayor de 16 años.');
+                            // Obtener el modal deseado por su ID
+                            const modalContent = document.getElementById("modalErrorEdad");
+                        
+                            // Verificar si se encontró el modal
+                            if (modalContent) {          
+                                // Crear un nuevo div para el modal
+                                const modalWrapper = document.createElement('div');
+                                modalWrapper.appendChild(modalContent.cloneNode(true));
+
+                                // Adjuntar el nuevo div al cuerpo del documento
+                                document.body.appendChild(modalWrapper);
+
+                                // Mostrar el modal usando jQuery
+                                $(modalWrapper.firstChild).modal('show');
+                            }
+                            
+                        }
+                    }
+                } 
+            } else {
+
+                flagDatos = 1;
+                localStorage.setItem('flagDatos', flagDatos);
+                if(esResidenteArg){
+                    paisOrigen = null;
+                    if(provinciaArg != 'San Luis'){
+                        schoolInSanLuis = null;
+                    }
+                    else{
+                        if(provinciaArg === 'San Luis' && schoolInSanLuis === "Otro"){
+                            schoolInSanLuis = otherSchool;}}
+                    
+                }
+                const url = urlForBack+'usuarios';  // Reemplaza con la URL de tu endpoint en el backend
+                const data = {
+                    email: email,
+                    edad: edad,
+                    esResidenteArg: esResidenteArg,
+                    paisOrigen: paisOrigen,
+                    provincia: provinciaArg,
+                    schoolInSanLuis: schoolInSanLuis
+                };
+
+                fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+                })
+                .then(response => {
+                    console.log('Estado de la respuesta:', response.status);
+                    console.log('Cabeceras de la respuesta:', response.headers);
+
+                    if (!response.ok) {
+                        throw new Error('Error en la respuesta del servidor: ' + response.status);
+                    }
+
+                    // Verifica si la respuesta tiene un tipo de contenido adecuado
+                    const contentType = response.headers.get('content-type');
+                    console.log('Tipo de contenido de la respuesta:', contentType);
+
+                    if (contentType && contentType.includes('application/json')) {
+                        return response.json();  // Analiza la respuesta como JSON
+                    } else {
+                        return response.text();
+                    }
+                })
+                .then(data => {
+                    console.log('Respuesta del servidor:', data);
+                    console.log('ID del usuario:', data.id);
+                    // Realizar acciones adicionales según la respuesta del servidor
+                    localStorage.setItem('email', email);
+                    localStorage.setItem('id', data.id);
+                    localStorage.setItem('edad', edad);
+                    localStorage.setItem('esResidenteArg', esResidenteArg);
+                    localStorage.setItem('paisOrigen', paisOrigen);
+                    localStorage.setItem('provinciaArg', provinciaArg);
+                    localStorage.setItem('schoolInSanLuis', schoolInSanLuis);
+                    localStorage.setItem('otherSchool', otherSchool);
+                    if(option == 1){
+                        // window.location.href = 'index.html'+
+                        // '?email=' + encodeURIComponent(email) +
+                        // '&id=' + encodeURIComponent(data.id) +
+                        // '&edad=' + encodeURIComponent(edad) +
+                        // '&esResidenteArg=' + encodeURIComponent(esResidenteArg) +
+                        // '&paisOrigen=' + encodeURIComponent(paisOrigen) +
+                        // '&provinciaArg=' + encodeURIComponent(provinciaArg)+
+                        // '&schoolInSanLuis=' + encodeURIComponent(schoolInSanLuis);
+                        window.location.href = 'Preguntas/questionnaire.html';
+                    }else{
+                        if(option == 2){
+                        // window.location.href = 'CarrerasDisponibles/quickQuestion.html'+
+                        // '?email=' + encodeURIComponent(email) +
+                        // '&id=' + encodeURIComponent(data.id) +
+                        // '&edad=' + encodeURIComponent(edad) +
+                        // '&esResidenteArg=' + encodeURIComponent(esResidenteArg) +
+                        // '&paisOrigen=' + encodeURIComponent(paisOrigen) +
+                        // '&provinciaArg=' + encodeURIComponent(provinciaArg)+
+                        // '&schoolInSanLuis=' + encodeURIComponent(schoolInSanLuis);
+                        window.location.href = 'CarrerasDisponibles/quickQuestion.html';
+                        }
+                    
+                    }
+                    
+                })
+                .catch(error => {
+                    console.error('Error al realizar la solicitud:', error);
+                });
+            }
+        }
+
+        // En el evento 'DOMContentLoaded', establecer los valores de los campos en el formulario
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log("flagDatos tiene ", flagDatos);
+            if(flagDatos == 1){
+                const queryString = window.location.search;
+                const urlParams = new URLSearchParams(queryString);
+
+                // Obtener los valores de los parámetros de la URL
+                // const email = urlParams.get('email');
+                // const edad = urlParams.get('edad');
+                // const esResidenteArg = urlParams.get('esResidenteArg');
+                // const provinciaArgValue = urlParams.get('provinciaArg');
+                // const schoolInSanLuis = urlParams.get('schoolInSanLuis');
+
+                const email = localStorage.getItem('email');
+                const edad = localStorage.getItem('edad');
+                const esResidenteArg = localStorage.getItem('esResidenteArg');
+                const provinciaArgValue = localStorage.getItem('provinciaArg');
+                const schoolInSanLuis = localStorage.getItem('schoolInSanLuis');
+                const otherSchool = localStorage.getItem('otherSchool');
+                
+
+                // radioSi.checked = true; // Marcar el radio "Sí" como seleccionado al cargar la página
+
+                // Establecer los valores en los campos del formulario
+                document.getElementById('exampleInputEmail1').value = email || '';
+                document.getElementById('exampleEdad').value = edad || '';
+                // Establecer los valores en los campos del formulario
+                if (esResidenteArg === 'true') {
+                    radioSi.checked = true;
+                    paisOrigen.style.display = 'none';
+                    provinciaArg.style.display = 'block';
+                    selectProvincia.value = provinciaArgValue || '';
+                    selectSchool.value = schoolInSanLuis || '';
+                } else {
+                    radioNo.checked = true;
+                    paisOrigen.style.display = 'block';
+                    provinciaArg.style.display = 'none';
+                }
+
+                // Actualizar la visibilidad de la lista de escuelas
+                updateSchoolVisibility();
+            }
+            
+        });
+
+        function volver(){
+            window.location.href = 'index.html';
+        }
+
+        
+        // // Función para reformatear los nombres de las escuelas
+        // function reformatearNombresEscuelas(nombresEscuelas) {
+        //     for (var i = 0; i < nombresEscuelas.length; i++) {
+        //         var nombreEscuela = nombresEscuelas[i];
+        //         // Reemplazar los puntos y espacios adicionales
+        //         nombreEscuela = nombreEscuela.replace(/\s+/g, ' ').trim();
+        //         // Reemplazar F. por F y N° por N° (sin espacios)
+        //         nombreEscuela = nombreEscuela.replace('F.', 'F').replace('N°', 'N°');
+        //         // Convertir las palabras a mayúsculas y minúsculas según corresponda
+        //         nombreEscuela = nombreEscuela.toLowerCase().split(' ').map(function(word) {
+        //             return word.charAt(0).toUpperCase() + word.slice(1);
+        //         }).join(' ');
+        //         nombresEscuelas[i] = nombreEscuela;
+        //     }
+        //     return nombresEscuelas;
+        // }
+
+        // // Reformatear los nombres de las escuelas
+        // schoolsInSanLuis = reformatearNombresEscuelas(schoolsInSanLuis);
+
+        // Agregar opciones al select
+        for (var i = 0; i < schoolsInSanLuis.length; i++) {
+            var option = document.createElement("option");
+            option.text = schoolsInSanLuis[i];
+            selectSchool.add(option);
+        }
+
+        selectProvincia.addEventListener('change', function () {
+            updateSchoolVisibility();
+        });
+
+        $('#exampleSchool').selectpicker();
+
+        function updateSchoolVisibility() {
+            const esResidenteArg = radioSi.checked;
+            const provinciaArgValue = selectProvincia.value;
+
+            // Mostrar la lista de escuelas solo si es residente de Argentina y selecciona San Luis
+            // schoolArg.style.display = esResidenteArg && provinciaArgValue === 'San Luis' ? 'block' : 'none';
+            // Mostrar la lista de escuelas solo si es residente de Argentina y selecciona San Luis
+            if (esResidenteArg && provinciaArgValue === 'San Luis') {
+                schoolArg.style.display = 'block';
+                toggleOtherSchoolInput(); // Llamar a la función para manejar la visibilidad del input "Otro"
+            } else {
+                schoolArg.style.display = 'none';
+                resetSchoolSelect();
+            }
+        }
+
+        // Obtener elementos del DOM
+        // var selectSchool = document.getElementById('exampleSchool');
+        var otherSchoolInput = document.getElementById('otherSchoolInput');
+
+        // Función para mostrar u ocultar el input según la selección en el select
+        function toggleOtherSchoolInput() {
+            var selectedOption = selectSchool.options[selectSchool.selectedIndex].value;
+            if (selectedOption === 'OTRO') {
+                otherSchoolInput.style.display = 'block';
+            } else {
+                otherSchoolInput.style.display = 'none';
+            }
+        }
+
+        selectSchool.addEventListener('change', function () {
+            toggleOtherSchoolInput();
+        });
+
+        // Función para resetear el select de escuelas
+        function resetSchoolSelect() {
+            selectSchool.selectedIndex = -1; // Deseleccionar cualquier opción seleccionada
+            selectSchool.dispatchEvent(new Event('change')); // Despachar un evento de cambio para asegurarse de que cualquier lógica asociada al cambio se ejecute
+            $('#exampleSchool').selectpicker('refresh'); // Refrescar el selectpicker para reflejar el cambio
+        }
+    
+    </script>
+</body>
+</html>

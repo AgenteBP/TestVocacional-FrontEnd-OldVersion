@@ -1,0 +1,5 @@
+.custom-img {
+    width: 100%; /* Ajusta el ancho según tus necesidades */
+    height: 200px; /* Ajusta la altura según tus necesidades */
+    object-fit: cover; /* Controla cómo la imagen se ajusta al contenedor */
+}

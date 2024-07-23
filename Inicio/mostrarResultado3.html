@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados del Test Vocacional</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../lib/fontawesome-free-6.5.1-web/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- <link rel="stylesheet" href="../Inicio2/loginNew/css/sb-admin-2.css"> -->
+    <link rel="stylesheet" href="css/styleMostrarResultado3.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar">
+            <div class="d-flex" style="text-align: center; padding: 1rem 1rem;">
+                <button class="toggle-btn" type="button" style="padding: 0;">
+                    <img src="../Imagenes/logo-UNSL-SMALL.png" alt="UNSL Informática Logo" width="45">
+                </button>
+                <div class="sidebar-logo">
+                    <a>Test Vocacional</a>
+                </div>  
+            </div>
+            <!-- <hr class="text-black " > -->
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a onclick="redirectToResumen()" class="sidebar-link">
+                        <i class="fa fa-house"></i>
+                        <span onclick="redirectToResumen()">Resumen</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#tables" aria-expanded="false" aria-controls="tables">
+                        <i class="fa-solid fa-table"></i>
+                        <span>Tablas</span>
+                    </a>
+                    <ul id="tables" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                        <!-- <h6 class="collapse-header" style="color: white;">Ver los resultados de:</h6> -->
+                        <li class="sidebar-link">
+                            <a style="padding: .625rem 1rem;">Ver los resultados de:</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" onclick="redirectToTables(1,'allResults')">Todos los resultados</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" onclick="redirectToTables(2,'viewEsResident')">Solo en la Argentina</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" onclick="redirectToTables(3,'viewEsNoResident')">Otro pais</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" onclick="redirectToTables(4,'viewSchoolInSanLuis')">Las escuelas en San Luis</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" onclick="redirectToTables(5,'viewQuantityCarrer')">Carreras</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" onclick="redirectToTables(6,'viewTour')">Seguimiento de cada Test hecho</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#graficos" aria-expanded="false" aria-controls="graficos">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span>Gráficos</span>
+                    </a>
+                    <ul id="graficos" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar"> 
+                        <li class="sidebar-link">
+                            <a style="padding: .625rem 1rem;">Ver los Gráficos de:</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" onclick="redirectToGraph(3,'graficaBarras')">Interes por Carreras en SL</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" onclick="redirectToGraph(4,'graficaBarras')">Interes por Carreras en Prov</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" onclick="redirectToGraph(2,'graficaBarrasEscuelas')">Top de Escuelas</a>
+                        </li>
+                    </ul>
+                </li>
+                <br>
+                <br>
+                <button class="expandAside" type="button">
+                    <i class="fa-solid fa-right-long"></i>
+                </button>
+                <button class="btn btn-outline-primary ml-auto" onclick="logOut()" id="logoutButton">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span class="logout-text">Cerrar Sesión</span>
+                </button>
+            </ul>
+            
+        </aside>
+        <div class="main p-3">
+            <!-- <header class="card-header header d-flex justify-content-end">
+                <button class="btn btn-outline-primary bi bi-box-arrow-right ml-auto" onclick="logOut()">Cerrar Sesión</button>
+            </header>
+            <hr class="text-black d-none d-sm-block"> -->
+            <main>
+                <div class="row">
+                    <!-- Cantidad total del test vocacional y de las consultas hechas -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Cantidad total del test vocacional y de las consultas hechas</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="cuentaTotal"></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fa-solid fa-2x fa-list"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cantidad total de interesados en carreras -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-info shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Cantidad total de interesados en carreras</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="cuentaTotalI"></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fa-solid fa-2x fa-check"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carrera mas elegida -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Carrera mas elegida</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="cuentaCarrera"></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fa-solid fa-2x fa-ranking-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Escuela que mas uso del sitio -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Escuela que mas uso del sitio</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="cuentaEscuela"></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fa-solid fa-2x fa-school"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <!-- Area Chart -->
+                    <div class="col-xl-8 col-lg-7"> 
+                        <!-- Barras -->
+                        <div class="card mb-4">
+                            <div class="card-header cardHeader">
+                                Top 5 de escuelas que mas han usado el sitio
+                            </div>
+                            <div class="card-body">
+                                <div id="graphForSchoolTop" style="width: 80%; height: 350px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                        <!-- Grafico de pie -->
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card  mb-4">
+                                <div class="card-header cardHeader">
+                                    Porcentaje de carreras elegidas
+                                </div>
+                                <div class="card-body">
+                                    <div id="graficaBarras" style="width: 100%; height: 350px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <!-- Tabla tabuladas -->
+                <div class="row">
+                     <!-- Tabla tabuladas de carreras -->
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="card  mb-4">
+                            <div class="card-header cardHeader">
+                                Cantidad de posibles alumnos por carreras
+                            </div>
+                            <div class="card-body" style="padding-left: 0; padding-right: 0;">
+                                <div id="tableForQuantityCarrer" class="result-view">
+                                    <table id="miTabla" class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Carreras</th>
+                                                <th scope="col">Cantidades Obtenidas</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Los datos se llenarán aquí mediante JavaScript -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tabla tabuladas de escuelas -->
+                    <div class="col-xl-8 col-lg-7">
+                        <div class="card  mb-4">
+                            <div class="card-header cardHeader">
+                                Escuelas donde se han realizado los test 
+                            </div>
+                            <div class="card-body" style="padding-left: 0; padding-right: 0;">
+                                <div id="tableForQuantitySchool" class="result-view">
+                                    <table id="miTabla" class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Escuelas</th>
+                                                <th scope="col">Resultados Obtenidos</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Los datos se llenarán aquí mediante JavaScript -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <nav aria-label="Page navigation example" class="text-center">
+                                <ul id="paginacionSchool" class="pagination justify-content-center">
+                                    <!-- Los botones de paginación se llenarán aquí mediante JavaScript -->
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            
+        </div>
+        <footer class="text-center footer" id="footer1">
+            <div class="container">
+              <h7>Hecho por Braian Paez - UNSL</h7>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Sesion expirada -->
+    <div class="modal fade" id="sesionExpiradaModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Sesión expirada</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Sesión expirada, por favor vuelva a iniciar sesión para seguir usando explorando.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="volverBtn">Volver</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous">
+    </script>
+    <!-- Any chart -->
+    <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-pie.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-cartesian.min.js"></script>
+
+    <script src="../url.js"></script>
+    <script src="js/displayResultsPrimary.js"></script>
+
+    <script>
+        const hamBurger = document.querySelector(".toggle-btn");
+
+        hamBurger.addEventListener("click", function () {
+        document.querySelector("#sidebar").classList.toggle("expand");
+        });
+
+        document.querySelector('.expandAside').addEventListener('click', function() {
+            // Cambiar la clase expand del elemento #sidebar
+            document.querySelector('#sidebar').classList.toggle('expand');
+
+            // Obtener el botón expandAside
+            const expandButton = document.querySelector('.expandAside');
+
+            // Obtener el ícono dentro del botón
+            const icon = expandButton.querySelector('i');
+
+            // Cambiar la clase del ícono dependiendo del estado de expansión de la barra lateral
+            if (document.querySelector('#sidebar').classList.contains('expand')) {
+                // Si la barra lateral está expandida, cambiar el ícono a fa-left-long
+                icon.classList.remove('fa-right-long');
+                icon.classList.add('fa-left-long');
+            } else {
+                // Si la barra lateral no está expandida, cambiar el ícono a fa-right-long
+                icon.classList.remove('fa-left-long');
+                icon.classList.add('fa-right-long');
+            }
+        });
+
+        function redirectToResumen(){
+            window.location.href = "mostrarResultado3.html";
+        }
+
+        function redirectToTables(numberTable, tableId) {
+            // Construir la URL con los parámetros
+            // var url = "tables.html?numberTable=" + numberTable + "&tableId=" + tableId;
+
+            localStorage.setItem("numberTable",numberTable);
+            localStorage.setItem("tableId",tableId);
+            
+            // Redirigir a la nueva página
+            window.location.href = "tables.html";
+        }
+
+        function redirectToGraph(numberGraph, graphId) {
+            localStorage.setItem("numberGraph",numberGraph);
+            localStorage.setItem("graphId",graphId);
+            
+            // Redirigir a la nueva página
+            window.location.href = "graph.html";
+        }
+    </script>
+</body>
+
+</html>

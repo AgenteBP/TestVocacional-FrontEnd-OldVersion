@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../lib/fontawesome-free-6.5.1-web/css/all.css">
+    <link rel="stylesheet" href="css/styleMostrarResultado2.css">
+</head>
+<body>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="d-flex flex-column justify-content-between col-auto bg-dark min-vh-100">
+                <div class="mt-4">
+                    <a class="text-white d-none d-sm-inline text-decoration-none d-flex align-items-center ms-4" role="button">
+                        <span class="fs-5">Test Vocacional</span>
+                    </a>
+                    <hr class="text-white d-none d-sm-block">
+                    <ul class="nav nav-pills flex-column mt-2 mt-sm-0" id="menu">
+                        <li class="nav-item my-sm-1 my-2">
+                            <a href="#" class="nav-link text-white text-center text-sm-start" aria-current="page">
+                                <i class="fa fa-house"></i>
+                                <span class="ms-2 d-none d-sm-inline">Resumen</span>
+                            </a>
+                        </li>
+                        <li class="nav-item disabled my-sm-1 my-2">
+                            <a href="#sidemenu" data-bs-toggle="collapse" class="nav-link text-white text-center text-sm-start" aria-current="page">
+                                <i class="fa-solid fa-table"></i>
+                                <span class="ms-2 d-none d-sm-inline">Tablas</span>
+                                <i class="fa fa-caret-down"></i>
+                            </a>
+                            <ul class="nav collapse ms-1 flex-column" id="sidemenu" data-bs-parent="#menu">
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" aria-current="page">tabla1</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" aria-current="page">tabla2</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" aria-current="page">tabla3</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" aria-current="page">tabla4</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item disabled my-sm-1 my-2">
+                            <a href="#sidemenu" data-bs-toggle="collapse" class="nav-link text-white text-center text-sm-start" aria-current="page">
+                                <i class="fa-solid fa-chart-pie"></i>
+                                <span class="ms-2 d-none d-sm-inline">Gráficos</span>
+                                <i class="fa fa-caret-down"></i>
+                            </a>
+                            <ul class="nav collapse ms-1 flex-column" id="sidemenu" data-bs-parent="#menu">
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" aria-current="page">Graficos1</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" aria-current="page">Graficos2</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" aria-current="page">Graficos3</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" aria-current="page">Graficos4</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a href="#" class="nav-link text-white" aria-current="page">
+                                <i class="fa-solid fa-chart-pie"></i>
+                                <span class="ms-2">Graficos</span>
+                            </a>
+                        </li> -->
+
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        // Toggler del sidebar
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+</body>
+</html>

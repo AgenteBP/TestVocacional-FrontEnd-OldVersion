@@ -1,0 +1,49 @@
+/* body { */
+    /* Agregar el fondo con gradiente lineal */
+    /* background: linear-gradient(90deg, #ff66c4, #ffde59); */
+    /* margin: 0; Elimina los márgenes predeterminados del cuerpo */
+    /* padding: 0; Elimina los rellenos predeterminados del cuerpo */
+    /* height: 100vh; Establece la altura al 100% del viewport (pantalla) */
+/* } */
+
+/* body { */
+    /* font-family: Arial, sans-serif; */
+    /* Agregar el fondo con gradiente lineal */
+    /* background: linear-gradient(90deg, #ff66c4, #ffde59); */
+    /* margin: 0; Elimina los márgenes predeterminados del cuerpo */
+    /* padding: 0; Elimina los rellenos predeterminados del cuerpo */
+    /* height: 100vh; Establece la altura al 100% del viewport (pantalla) */
+/* } */
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(90deg, #ff66c4, #ffde59); /* Color de fondo */
+    color: #000; /* Color de texto */
+}
+
+header {
+    background: transparent; /* Fondo del encabezado transparente */
+    /* padding: 15px 0; Ajuste del relleno */
+}
+
+.aResultados{
+    font-family: Arial, sans-serif;
+    color: #000; /* Color de texto */
+}
+
+.btn-primary {
+    background-color: #000; /* Cambia el color del botón principal */
+    border-color: #000; /* Cambia el color del borde del botón principal */
+    margin-right: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #333; /* Cambia el color al pasar el ratón sobre el botón principal */
+    border-color: #333; /* Cambia el color del borde al pasar el ratón sobre el botón principal */
+}
+
+.jumbotron {
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo del jumbotron con opacidad */
+    padding: 2rem; /* Ajuste del relleno */
+}
+

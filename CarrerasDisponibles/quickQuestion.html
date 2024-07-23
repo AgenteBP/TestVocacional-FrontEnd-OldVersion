@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta sobre una carrera en particular</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../Preguntas/css/styles.css">
+    <link rel="stylesheet" href="styleForQuickQuestion.css">
+</head>
+<body>
+    <header class=" card-header header">
+        <h5>Test Vocacional: Área Informática</h5>
+    </header>
+    
+
+    <div class="container mt-4">
+        <h5>Selecciona una carrera que quieras conocer</h5>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../Imagenes/ciencias-de-computacion.jpg" class="card-img-top img-fluid rounded custom-img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Licenciatura en Ciencia de la Computación</h5>
+                        <a class="btn btn-primary" onclick="modalFunctionQQ('ModalLC',1)">Más Información</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../Imagenes/prof-comp.jpg" class="card-img-top img-fluid rounded custom-img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Profesorado en Ciencias de la Computación</h5>
+                        <p class="card-text"> </p>
+                        <a class="btn btn-primary" onclick="modalFunctionQQ('ModalPC',1)">Más Información</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../Imagenes/ing-informatica.jpg" class="card-img-top img-fluid rounded custom-img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Ingeniería en Informática</h5>
+                        <a class="btn btn-primary" onclick="modalFunctionQQ('ModalIF',1)">Más Información</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col" style="margin-top: 10px;">
+                <div class="card h-100">
+                    <img src="../Imagenes/ing-computacion.jpg" class="card-img-top img-fluid rounded custom-img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Ingeniería en Computación</h5>
+                        <a class="btn btn-primary" onclick="modalFunctionQQ('ModalIC',1)">Más Información</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col" style="margin-top: 10px;">
+                <div class="card h-100">
+                    <img src="../Imagenes/tec_web_1.jpg" class="card-img-top img-fluid rounded custom-img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Tecnicatura Web</h5>
+                        <a class="btn btn-primary" onclick="modalFunctionQQ('ModalTW',1)">Más Información</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col" style="margin-top: 10px;">
+                <div class="card h-100">
+                    <img src="../Imagenes/tec_red_comp_1.jpg" class="card-img-top img-fluid rounded custom-img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Tecnicatura Universitaria en Redes de Computadoras</h5>
+                        <a class="btn btn-primary" onclick="modalFunctionQQ('ModalTR',1)">Más Información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <button class="btn btn-primary" value="botonV2" id="botonV2" onclick="backToResgistro()">Volver</button>
+    </div>
+
+    <footer class="text-center footer" id="footer1">
+    <div class="container">
+        <h7>Hecho por Braian Paez - UNSL</h7>
+    </div>
+    </footer>
+</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- pdf -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../lib/html2canvas.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="../pdf.js"></script>
+<script src="../url.js"></script>
+<script src="get Careers.js"></script>
+

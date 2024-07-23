@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graficos Resumen</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../lib/fontawesome-free-6.5.1-web/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/styleMostrarResultado3.css">
+</head>
+<body>
+    <div class="wrapper">
+        <aside id="sidebar">
+            <div class="d-flex" style="text-align: center; padding: 1rem 1rem;">
+                <button class="toggle-btn" type="button" style="padding: 0;">
+                    <img src="../Imagenes/logo-UNSL-SMALL.png" alt="UNSL Informática Logo" width="45">
+                </button>
+                <div class="sidebar-logo">
+                    <a href="#">Test Vocacional</a>
+                </div>  
+            </div>
+            <!-- <hr class="text-black " > -->
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a onclick="redirectToResumen()" class="sidebar-link">
+                        <i class="fa fa-house"></i>
+                        <span onclick="redirectToResumen()">Resumen</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#tables" aria-expanded="false" aria-controls="tables">
+                        <i class="fa-solid fa-table"></i>
+                        <span>Tablas</span>
+                    </a>
+                    <ul id="tables" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                        <!-- <h6 class="collapse-header" style="color: white;">Ver los resultados de:</h6> -->
+                        <li class="sidebar-link">
+                            <a style="padding: .625rem 1rem;">Ver los resultados de:</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" onclick="redirectToTables(1,'allResults')">Todos los resultados</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" onclick="redirectToTables(2,'viewEsResident')">Solo en la Argentina</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" onclick="redirectToTables(3,'viewEsNoResident')">Otro pais</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" onclick="redirectToTables(4,'viewSchoolInSanLuis')">Las escuelas en San Luis</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" onclick="redirectToTables(5,'viewQuantityCarrer')">Carreras</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" onclick="redirectToTables(6,'viewTour')">Seguimiento de cada Test hecho</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#graficos" aria-expanded="false" aria-controls="graficos">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span>Gráficos</span>
+                    </a>
+                    <ul id="graficos" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar"> 
+                        <li class="sidebar-link">
+                            <a style="padding: .625rem 1rem;">Ver los Gráficos de:</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" onclick="redirectToGraph(3,'graficaBarras')">Interes por Carreras en SL</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" onclick="redirectToGraph(4,'graficaBarras')">Interes por Carreras en Prov</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" onclick="redirectToGraph(2,'graficaBarrasEscuelas')">Top de Escuelas</a>
+                        </li>
+                    </ul>
+                </li>
+                <br>
+                <br>
+                <button class="expandAside" type="button">
+                    <i class="fa-solid fa-right-long"></i>
+                </button>
+                <button class="btn btn-outline-primary ml-auto" onclick="logOut()" id="logoutButton">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span class="logout-text">Cerrar Sesión</span>
+                </button>
+            </ul>
+        </aside>
+        <div class="main p-3">
+            <main>
+                <div id="pieGraph">
+                    <div class="row gx-2 align-items-center">
+                        <div class="col-auto">
+                            <!-- Filtro en general con modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="handleModeChange()">
+                                <i class="fa-solid fa-filter"></i>
+                            </button>
+                            
+                            <!-- Modal onshown="handleModeChange()"-->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Búsqueda Personalizada</h1>
+                                        </div>
+                                        <div class="modal-body">
+                                            <a type="button" onclick="reset()">
+                                                <i class="fa-solid fa-eraser"></i>
+                                                <span>Resetear</span>
+                                            </a>
+                                            <form class="d-flex flex-column" onsubmit="filterGraphA(event, typeOfGraph)">
+                                                <div class="mb-3">
+                                                    <label for="rangoEdad">Rango de Edad:</label>
+                                                    <!-- <div class="my-js-slider"></div> -->
+                                                    <input type="text" class="my-js-slider" name="my-js-slider" value="" />
+                                                </div>
+    
+                                                <div class="mb-3">
+                                                    <label for="rangoEdad">Rango de Año:</label>
+                                                    <!-- <div class="my-js-slider2"></div> -->
+                                                    <input type="text" class="my-js-slider2" name="my-js-slider2" value="" />
+                                                </div>
+                                                
+                                                <div id="selectEscuela">
+                                                    <div class="mb-3 d-flex flex-column" >
+                                                        <label aria-label="Filtrar por" id="filtroOpcion1">Escuelas a filtrar</label>
+                                                        <select class="selectpicker form-control"  data-live-search="true"  data-size="10" id="exampleSchool" name="exampleSchool" title='Seleccione una Escuela...'>
+                                                        </select>
+                                                        <!-- <input class="form-control me-2" type="search" placeholder="Buscar por escuela" aria-label="Search" id="filtroValorG1"> -->
+                                                    </div>
+                                                </div>
+                                                
+                                                <div id="selectProvincia">
+                                                    <div class="mb-3 d-flex flex-column">
+                                                        <label aria-label="Filtrar por" id="filtroOpcion2">Provincias a filtrar</label>
+                                                        <select class="form-select form-select-sm" id="exampleProvince"></select>
+                                                    </div>
+                                                </div>
+                                                
+                                    
+                                                <div class="mb-3 form-check">
+                                                    <input class="form-check-input" type="checkbox" value="Interés" id="interesCheckboxG" checked>
+                                                    <label class="form-check-label" for="interesCheckbox">Indicar Intereses</label>
+                                                </div>
+                                    
+                                                <!-- <div class="mb-3">
+                                                    <button class="btn btn-success" type="submit">Buscar</button>
+                                                </div> -->
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-success" onclick="filterGraphA(event, typeOfGraph)">Buscar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Fin de filtro con modal -->
+                        </div>
+                        <!-- Comienzo de busqueda manual -->
+                        <div class="col-auto">
+                            <form class="d-flex" onsubmit="filtrarGraficoM(event)">
+                                <div class="btn-group">
+                                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Rango de Edad
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-xxl-start">
+                                         <div class="mb-2">
+                                            <label for="rangoEdad">Seleccione un rango de edad:</label>
+                                            <!-- <div class="my-js-slider3"></div> -->
+                                            <input type="text" class="my-js-slider" name="my-js-slider" value="" />
+                                        </div> 
+                                    </ul>
+                                </div>
+                                &nbsp;&nbsp;
+                                <div class="btn-group">
+                                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Año
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-xxl-start">
+                                         <div class="mb-2">
+                                            <label for="rangoEdad">Seleccione un rango de año:</label>
+                                            <!-- <div class="my-js-slider4"></div> -->
+                                            <input type="text" class="my-js-slider2" name="my-js-slider2" value="" />
+                                        </div> 
+                                    </ul>
+                                </div>
+                                &nbsp;&nbsp;
+                                <div class="btn-group">
+                                    <input class="form-check-input" type="checkbox" value="Interés" id="interesCheckboxG2" checked>
+                                    <label class="form-check-label" for="interesCheckbox">Indicar Intereses</label>
+                                </div>
+                                &nbsp;&nbsp;
+                                <div class="btn-group">
+                                    <button class="btn btn-success btn-sm" type="button" onclick="filterGraphM(event)">Buscar</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Fin de busqueda manual -->
+                        
+                    </div>
+                    <hr class="text-black d-none d-sm-block">
+                    <section style="flex-grow: 1;">
+                        <div id="graficaBarras" style="width: 100%; height: 500px;"></div>
+                    </section>
+                </div>
+
+                <div id="barGraph">
+                    <div class="row gx-2 align-items-center">
+                        <div class="col-auto">
+                            <!-- Filtro en general con modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalBarGraph">
+                                <i class="fa-solid fa-filter"></i>
+                            </button>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModalBarGraph" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Comparativo entre escuelas</h1>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="d-flex flex-column" onsubmit="filterBar(event)">
+                                                <div>
+                                                    <label aria-label="Filtrar por" id="filtroOpcion1">Puedes comparar hasta 5 escuelas a la vez</label>
+                                                    <a type="button" onclick="reset()">
+                                                        <i class="fa-solid fa-eraser"></i>
+                                                        <span>Resetear</span>
+                                                    </a>
+                                                </div>
+                                                
+                                                <div class="mb-3 d-flex flex-column">
+                                                    <select class="selectpicker form-control"  data-live-search="true"  data-size="10" id="barGraphSchool1" name="barGraphSchool1" title='Escuela N 1 a filtrar'>
+                                                    </select>
+                                                    <br>
+                                                    <select class="selectpicker form-control"  data-live-search="true"  data-size="10" id="barGraphSchool2" name="barGraphSchool2" title='Escuela N 2 a filtrar'>
+                                                    </select>
+                                                    <br>
+                                                    <select class="selectpicker form-control"  data-live-search="true"  data-size="10" id="barGraphSchool3" name="barGraphSchool3" title='Escuela N 3 a filtrar'>
+                                                    </select>
+                                                    <br>
+                                                    <select class="selectpicker form-control"  data-live-search="true"  data-size="10" id="barGraphSchool4" name="barGraphSchool4" title='Escuela N 4 a filtrar'>
+                                                    </select>
+                                                    <br>
+                                                    <select class="selectpicker form-control"  data-live-search="true"  data-size="10" id="barGraphSchool5" name="barGraphSchool5" title='Escuela N 5 a filtrar'>
+                                                    </select>
+                                                </div>
+    
+                                    
+                                                <!-- <div class="mb-3 d-flex flex-column">
+                                                    <label aria-label="Filtrar por" id="filtroOpcion1">Escuelas N 5 a filtrar</label>
+                                                    <select class="selectpicker form-control"  data-live-search="true"  data-size="10" id="exampleSchool" name="exampleSchool" title='Seleccione una Escuela...'>
+                                                    </select>
+                                                </div> -->
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-success" onclick="filterBar(event)">Buscar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Fin de filtro con modal -->
+                        </div>
+                    </div>
+                    <hr class="text-black d-none d-sm-block">
+                    <section style="flex-grow: 1;">
+                        <div id="graphForSchoolTop" style="width: 100%; height: 500px;"></div>
+                        <nav aria-label="Page navigation example" class="text-center">
+                            <ul id="paginacion" class="pagination justify-content-center">
+                                <!-- Los botones de paginación se llenarán aquí mediante JavaScript -->
+                            </ul>
+                        </nav>
+                    </section>
+                    
+                </div>
+                
+            </main>
+        </div>
+        <footer class="text-center footer" id="footer1">
+            <div class="container">
+              <h7>Hecho por Braian Paez - UNSL</h7>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Sesion expirada -->
+    <div class="modal fade" id="sesionExpiradaModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Sesión expirada</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Sesión expirada, por favor vuelva a iniciar sesión para seguir usando explorando.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="volverBtn">Volver</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous">
+    </script>
+    <!-- Select with search -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <!-- wRunner CSS -->
+    <link rel="stylesheet" href="filterofEdad/wrunner-default-theme.css">
+    <!-- wRunner Vanilla JS -->
+    <script src="filterofEdad/wrunner-native.js"></script>
+    <!-- wRunner jQuery -->
+    <script src="filterofEdad/wrunner-jquery.js"></script>
+    
+    <!-- Any chart -->
+    <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-pie.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-cartesian.min.js"></script>
+
+    <script src="../school.js"></script>
+    <script src="../url.js"></script>
+    <script src="js/displayResultsForGraph.js"></script>
+
+    <script>
+        const hamBurger = document.querySelector(".toggle-btn");
+
+        hamBurger.addEventListener("click", function () {
+        document.querySelector("#sidebar").classList.toggle("expand");
+        });
+        
+        document.querySelector('.expandAside').addEventListener('click', function() {
+            // Cambiar la clase expand del elemento #sidebar
+            document.querySelector('#sidebar').classList.toggle('expand');
+
+            // Obtener el botón expandAside
+            const expandButton = document.querySelector('.expandAside');
+
+            // Obtener el ícono dentro del botón
+            const icon = expandButton.querySelector('i');
+
+            // Cambiar la clase del ícono dependiendo del estado de expansión de la barra lateral
+            if (document.querySelector('#sidebar').classList.contains('expand')) {
+                // Si la barra lateral está expandida, cambiar el ícono a fa-left-long
+                icon.classList.remove('fa-right-long');
+                icon.classList.add('fa-left-long');
+            } else {
+                // Si la barra lateral no está expandida, cambiar el ícono a fa-right-long
+                icon.classList.remove('fa-left-long');
+                icon.classList.add('fa-right-long');
+            }
+        });
+
+        function redirectToResumen(){
+            window.location.href = "mostrarResultado3.html";
+        }
+
+        function redirectToTables(numberTable, tableId) {
+            // Construir la URL con los parámetros
+            // var url = "tables.html?numberTable=" + numberTable + "&tableId=" + tableId;
+
+            localStorage.setItem("numberTable",numberTable);
+            localStorage.setItem("tableId",tableId);
+            
+            // Redirigir a la nueva página
+            window.location.href = "tables.html";
+        }
+
+        function redirectToGraph(numberGraph, graphId) {
+            localStorage.setItem("numberGraph",numberGraph);
+            localStorage.setItem("graphId",graphId);
+            if(numberGraph === 3){
+                localStorage.setItem("typeOfGraph",1);
+            }
+            else if(numberGraph === 4){
+                localStorage.setItem("typeOfGraph",2);
+            }
+            
+            // Redirigir a la nueva página
+            window.location.href = "graph.html";
+        }
+
+        // Array de provincias
+        var provincias = [   "Todas las provincias", "Buenos Aires",    "Catamarca",    "Chaco",    "Chubut",    "Ciudad Autónoma de Buenos Aires",    "Córdoba",    "Corrientes",    "Entre Ríos",    "Formosa",    "Jujuy",    "La Pampa",    "La Rioja",    "Mendoza",    "Misiones",    "Neuquén",    "Río Negro",    "Salta",    "San Juan",    "San Luis",    "Santa Cruz",    "Santa Fe",    "Santiago del Estero",    "Tierra del Fuego, Antártida e Islas del Atlántico Sur",    "Tucumán"];
+
+        // Obtener el elemento select
+        var selectProvincia = document.getElementById("exampleProvince");
+
+        // Agregar opciones al select
+        for (var i = 0; i < provincias.length; i++) {
+            var option = document.createElement("option");
+            option.text = provincias[i];
+            selectProvincia.add(option);
+        }
+
+        var selectSchool = document.getElementById("exampleSchool");
+        var selectGraphSchool1 = document.getElementById("barGraphSchool1");
+        var selectGraphSchool2 = document.getElementById("barGraphSchool2");
+        var selectGraphSchool3 = document.getElementById("barGraphSchool3");
+        var selectGraphSchool4 = document.getElementById("barGraphSchool4");
+        var selectGraphSchool5 = document.getElementById("barGraphSchool5");
+
+        
+        // Agregar opciones al select
+        for (var i = 0; i < schoolsInSanLuisForGraph.length; i++) {
+            var option = document.createElement("option");
+            option.text = schoolsInSanLuisForGraph[i];
+            selectSchool.add(option);
+
+            if (i !== 0) {
+                var optionCopy = document.createElement("option");
+                optionCopy.text = schoolsInSanLuisForGraph[i];
+                selectGraphSchool1.add(optionCopy);
+
+                var optionCopy2 = document.createElement("option");
+                optionCopy2.text = schoolsInSanLuisForGraph[i];
+                selectGraphSchool2.add(optionCopy2);
+
+                var optionCopy3 = document.createElement("option");
+                optionCopy3.text = schoolsInSanLuisForGraph[i];
+                selectGraphSchool3.add(optionCopy3);
+
+                var optionCopy4 = document.createElement("option");
+                optionCopy4.text = schoolsInSanLuisForGraph[i];
+                selectGraphSchool4.add(optionCopy4);
+
+                var optionCopy5 = document.createElement("option");
+                optionCopy5.text = schoolsInSanLuisForGraph[i];
+                selectGraphSchool5.add(optionCopy5);
+            }
+        }
+        
+        $('#exampleSchool').selectpicker();
+        $('#barGraphSchool1').selectpicker();
+        $('#barGraphSchool2').selectpicker();
+        $('#barGraphSchool3').selectpicker();
+        $('#barGraphSchool4').selectpicker();
+        $('#barGraphSchool5').selectpicker();
+    </script>
+</body>
+</html>

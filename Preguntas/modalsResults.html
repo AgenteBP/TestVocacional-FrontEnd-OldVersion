@@ -1,0 +1,601 @@
+<!-- Tecnicatura Web -->
+<div class="modal fade" id="modalResultTW" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+        <div class="modal-header d-flex justify-content-between align-items-center">
+            <h4 class="modal-title" id="exampleModalLabel">Resultados del Test Vocacional</h4>
+            <i class="bi bi-filetype-pdf" type="button" onclick="generarPDF(1)">Descargar PDF</i>
+        </div>
+        <div class="modal-body">
+            <div class="container mt-3">
+            <!-- Aquí inserta tu contenido dentro de un div -->
+                <div id="tableTW">
+                    <h3>Estimación: <strong>Tecnicatura Universitaria en Web</strong></h3>
+                    <h5><strong>Duración:</strong> 3 años</h5>
+                    <h6>Lo que debes saber acerca de la carrera:</h6>
+                    <table class="table">
+                        <tbody>
+                            <thead>
+                                <tr>
+                                    <th scope="col"><strong>Programación</strong></th>
+                                    <th scope="col"><strong>Horario de cursada</strong></th>
+                                    <th scope="col"><strong>Salida laboral</strong></th>
+                                    <th scope="col"><strong>Etapa Final</strong></th>
+                                </tr>
+                                </thead>
+                            <tr>
+                                <td>          
+                                    Veras más orientado al alto Nivel como por ejemplo:
+                                    <ul>
+                                        <li>HTML</li>
+                                        <li>CSS</li>
+                                        <li>JavaScript</li>
+                                        <li>Frameworks y Bibliotecas como React</li>
+                                        <li>Bases de datos</li>
+                                        <li>Git y GitHub</li>
+                                    </ul>                
+                                </td>
+                                <td>
+                                    Generalmente son en la tarde y la noche
+                                </td>
+                                <td>
+                                    <li>Desarrollador de Software Web y de aplicaciones móviles</li>
+                                    <li>Dar asesoramiento técnico</li>
+                                    <li>Brindar seguridad en Web</li>
+                                </td>
+                                <td>
+                                    Práctica Técnica Supervisada
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                </div>
+                
+
+                <h6>Para obtener más información sobre la carrera, inscripción y cuando comienza la cursada haz clic en "Me interesa".</h6>
+            </div>
+
+            <!-- <div class="modal-footer">
+                
+            </div>
+            <div class="modal-footer">
+                
+            </div> -->
+            <div class="d-flex justify-content-between modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="sendResults('Tecnicatura Universitaria en Web', false)" >No me interesa</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="sendResults('Tecnicatura Universitaria en Web', true,1)">Me interesa</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tecnicatura Universitaria en Redes de Computadoras -->
+<div class="modal fade" id="modalResultTR" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+        <div class="modal-header d-flex justify-content-between align-items-center">
+            <h4 class="modal-title" id="exampleModalLabel">Resultados del Test Vocacional</h4>
+            <i class="bi bi-filetype-pdf" type="button" onclick="generarPDF(2)">Descargar PDF</i>
+        </div>
+        <div class="modal-body">
+            <div class="container mt-3">
+            <!-- Aquí inserta tu contenido dentro de un div -->
+                <div id="tableTR">
+                    <h3>Estimación: <strong>Tecnicatura Universitaria en Redes de Computadoras</strong></h3>
+                    <h5><strong>Duración:</strong> 3 años</h5>
+                    <h6>Lo que debes saber acerca de la carrera:</h6>
+                    <table class="table">
+
+                        <tbody>
+                            <thead>
+                                <tr>
+                                    <th scope="col"><strong>Programación</strong></th>
+                                    <th scope="col"><strong>Horario de cursada</strong></th>
+                                    <th scope="col"><strong>Salida laboral</strong></th>
+                                    <th scope="col"><strong>Etapa Final</strong></th>
+                                </tr>
+                                </thead>
+                            <tr>
+                                <td>          
+                                    Veras mas lenguajes y herramientas que te permitan comprender, mantener y solucionar problemas en entornos de redes en tareas de redes como por ejemplo:
+                                    <ul>
+                                        <li>Python</li>
+                                        <li>Java</li>
+                                        <li>Sistemas Operativos de Redes</li>
+                                        <li>Bash scripting</li>
+                                        <li>Wireshark</li>
+                                        <li>GNS3 (Graphical Network Simulator-3)</li>
+                                        <li>Cisco packet tracer</li>
+                                    </ul>               
+                                </td>
+                                <td>
+                                    Generalmente son en la tarde y la noche
+                                </td>
+                                <td>
+                                    <li>Asesoramiento técnico</li>
+                                    <li>Mantenimiento de redes</li>
+                                    <li>Desarrollar dispositivos de redes</li>
+                                    <li>Diseño, instalación y configuración de redes de computadora</li>
+                                </td>
+                                <td>
+                                    Práctica Técnica Supervisada
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                </div>
+                
+
+                <h6>Para obtener más información sobre la carrera, inscripción y cuando comienza la cursada haz clic en "Me interesa"</h6>
+            </div>
+
+            <div class="d-flex justify-content-between modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="sendResults('Tecnicatura Universitaria en Redes de Computadoras', false)">No me interesa</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="sendResults('Tecnicatura Universitaria en Redes de Computadoras', true,2)">Me interesa</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!-- Profesorado en Ciencias de la Computación -->
+<div class="modal fade" id="modalResultPC" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+        <div class="modal-header d-flex justify-content-between align-items-center">
+            <h4 class="modal-title" id="exampleModalLabel">Resultados del Test Vocacional</h4>
+            <i class="bi bi-filetype-pdf" type="button" onclick="generarPDF(3)">Descargar PDF</i>
+        </div>
+        <div class="modal-body">
+            <div class="container mt-3">
+            <!-- Aquí inserta tu contenido dentro de un div -->
+                <div id="tablePC">
+                    <h3>Estimación: <strong>Profesorado en Ciencias de la Computación</strong></h3>
+                    <h5><strong>Duración:</strong> 4 años</h5>
+                    <h6>Lo que debes saber acerca de la carrera:</h6>
+                    <table class="table">
+                        <tbody>
+                            <thead>
+                                <tr>
+                                    <th scope="col"><strong>Programación</strong></th>
+                                    <th scope="col"><strong>Horario de cursada</strong></th>
+                                    <th scope="col"><strong>Salida laboral</strong></th>
+                                    <th scope="col"><strong>Etapa Final</strong></th>
+                                </tr>
+                                </thead>
+                            <tr>
+                                <td>          
+                                    Veras lenguajes y herramientas que te permitan comprender, mantener y solucionar problemas en el área de educativa como por ejemplo:
+                                    <ul>
+                                        <li>Java</li>
+                                        <li>C, C++</li>
+                                        <li>Prolog</li>
+                                        <li>Bases de datos como MySql, postgresql</li>
+                                        <li>Programación funcional como Haskell</li>
+                                        <li>Assembly</li>
+                                        <li>Software educativo como App Inventor</li>
+                                    </ul>               
+                                </td>
+                                <td>
+                                    Generalmente los horarios de la materia entan dividos entre mañana, tarde y noche
+                                </td>
+                                <td>
+                                    <li>Poder ejercer la docencia en informática en todos los niveles.</li>
+                                    <li>Realizar investigación con fines educativos.</li>
+                                    <li>Asesoría y consultoría a empresas, instituciones educativas o gubernamentales.</li>
+                                    <li>Desarrollo de Software Educativo.</li>
+                                </td>
+                                <td>
+                                    <li>Actividades acreditables en docencia</li>
+                                    <li>Actividades acreditables en extensión</li>
+                                    <li>Actividades acreditables en investigación</li>
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                </div>
+                
+                <h6>Para obtener más información sobre la carrera, inscripción y cuando comienza la cursada haz clic en "Me interesa"</h6>
+            </div>
+
+            <div class="d-flex justify-content-between modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="sendResults('Profesorado en Ciencias de la Computación', false)">No me interesa</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="sendResults('Profesorado en Ciencias de la Computación', true,3)">Me interesa</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!-- Licenciatura en Ciencia de la Computación -->
+<div class="modal fade" id="modalResultLC" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+        <div class="modal-header d-flex justify-content-between align-items-center">
+            <h4 class="modal-title" id="exampleModalLabel">Resultados del Test Vocacional</h4>
+            <i class="bi bi-filetype-pdf" type="button" onclick="generarPDF(4)">Descargar PDF</i>
+        </div>
+        <div class="modal-body">
+            <div class="container mt-3">
+            <!-- Aquí inserta tu contenido dentro de un div -->
+                <div id="tableLC">
+                    <h3>Estimación: <strong>Licenciatura en Ciencia de la Computación</strong></h3>
+                    <h5><strong>Duración:</strong> 5 años</h5>
+                    <h6>Lo que debes saber acerca de la carrera:</h6>
+                    <table class="table">
+
+                        <tbody>
+                            <thead>
+                                <tr>
+                                    <th scope="col"><strong>Programación</strong></th>
+                                    <th scope="col"><strong>Horario de cursada</strong></th>
+                                    <th scope="col"><strong>Salida laboral</strong></th>
+                                    <th scope="col"><strong>Etapa Final</strong></th>
+                                </tr>
+                                </thead>
+                            <tr>
+                                <td>          
+                                    Veras lenguajes y herramientas que te permitan comprender, mantener y solucionar problemas en el área de investigación como por ejemplo:
+                                    <ul>
+                                        <li>Java</li>
+                                        <li>C, C++</li>
+                                        <li>Prolog</li>
+                                        <li>Bases de datos como MySql, postgresql</li> 
+                                        <li>Programación funcional como Haskell</li>
+                                        <li>Assembly</li>
+                                        <li>Arena Simulation para simulación</li>
+                                        <li>Cisco packet tracer</li>
+                                    </ul>               
+                                </td>
+                                <td>
+                                    Generalmente los horarios de la materia entan dividos entre mañana, tarde y noche
+                                </td>
+                                <td>
+                                    <li>Ámbito de investigación</li>
+                                    <li>Áreas informáticas de organizaciones</li>
+                                    <li>Formar parte de un equipo de desarrollo de Software</li>
+                                    <li>Enseñanzas Universitaria y capacitación en ciencias de la computación</li>
+                                </td>
+                                <td>
+                                    <li>Trabajo Final</li>
+                                    <li>Práctica de Investigación Supervisada</li>
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                </div>
+                
+
+                <h6>Para obtener más información sobre la carrera, inscripción y cuando comienza la cursada haz clic en "Me interesa"</h6>
+            </div>
+
+            <div class="d-flex justify-content-between modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="sendResults('Licenciatura en Ciencia de la Computación',false)">No me interesa</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="sendResults('Licenciatura en Ciencia de la Computación',true,4)">Me interesa</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!-- Ingeniería en Informática -->
+<div class="modal fade" id="modalResultII" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+        <div class="modal-header d-flex justify-content-between align-items-center">
+            <h4 class="modal-title" id="exampleModalLabel">Resultados del Test Vocacional</h4>
+            <i class="bi bi-filetype-pdf" type="button" onclick="generarPDF(5)">Descargar PDF</i>
+        </div>
+        <div class="modal-body">
+            <div class="container mt-3">
+            <!-- Aquí inserta tu contenido dentro de un div -->
+                <div id="tableII">
+                    <h3>Estimación: <strong>Ingeniería en Informática</strong></h3>
+                    <h5><strong>Duración:</strong> 5 años</h5>
+                    <h6>Lo que debes saber acerca de la carrera:</h6>
+                    <table class="table">
+                        <tbody>
+                            <thead>
+                                <tr>
+                                    <th scope="col"><strong>Programación</strong></th>
+                                    <th scope="col"><strong>Horario de cursada</strong></th>
+                                    <th scope="col"><strong>Salida laboral</strong></th>
+                                    <th scope="col"><strong>Etapa Final</strong></th>
+                                </tr>
+                                </thead>
+                            <tr>
+                                <td>          
+                                    Veras mas lenguajes y herramientas que te permitan comprender, mantener y solucionar problemas en entornos de industria de software como por ejemplo:
+                                    <ul>
+                                        <li>Python</li>
+                                        <li>Java</li>
+                                        <li>C, C++</li>
+                                        <li>Prolog</li>
+                                        <li>HTML</li>
+                                        <li>CSS</li>
+                                        <li>Javascript</li>
+                                        <li>Frameworks y Bibliotecas como React, CodeIgniter, etc</li>
+                                        <li>Bases de datos como MySql, postgresql</li>
+                                        <li>Programación funcional como Haskell</li>
+                                    </ul>               
+                                </td>
+                                <td>
+                                    Generalmente los horarios de la materia entan dividos entre mañana, tarde y noche
+                                </td>
+                                <td>
+                                    <li>Desarrollar, gestionar o controlar Proyectos de Software teniendo en cuenta el costo y tiempo.</li>
+                                    <li>Aplicar la ciencia de la tecnología en mejorar productos de software ya existentes</li>
+                                    <li>Seguridad Informática en Software</li>
+                                    <li>Participar en asuntos legales, económicos y financieros en el área de software</li>
+                                </td>
+                                <td>
+                                    <li>Trabajo Final</li>
+                                    <li>Práctica Profesional Supervisada</li>
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                </div>
+                
+
+                <h6>Para obtener más información sobre la carrera, inscripción y cuando comienza la cursada haz clic en "Me interesa"</h6>
+            </div>
+
+            <div class="d-flex justify-content-between modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="sendResults('Ingeniería en Informática', false)">No me interesa</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="sendResults('Ingeniería en Informática', true,5)">Me interesa</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!-- Ingeniería en Computación -->
+<div class="modal fade" id="modalResultIC" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+        <div class="modal-header d-flex justify-content-between align-items-center">
+            <h4 class="modal-title" id="exampleModalLabel">Resultados del Test Vocacional</h4>
+            <i class="bi bi-filetype-pdf" type="button" onclick="generarPDF(6)">Descargar PDF</i>
+        </div>
+        <div class="modal-body">
+            <div class="container mt-3">
+            <!-- Aquí inserta tu contenido dentro de un div -->
+                <div id="tableIC">
+                    <h3>Estimación: <strong>Ingeniería en Computación</strong></h3>
+                    <h5><strong>Duración:</strong> 5 años</h5>
+                    <h6>Lo que debes saber acerca de la carrera:</h6>
+                    <table class="table">
+                        <tbody>
+                            <thead>
+                                <tr>
+                                    <th scope="col"><strong>Programación</strong></th>
+                                    <th scope="col"><strong>Horario de cursada</strong></th>
+                                    <th scope="col"><strong>Salida laboral</strong></th>
+                                    <th scope="col"><strong>Etapa Final</strong></th>
+                                </tr>
+                                </thead>
+                            <tr>
+                                <td>          
+                                    Veras mas lenguajes y herramientas que te permitan comprender, mantener y solucionar problemas, como por ejemplo:
+                                    <ul>
+                                        <li>Python</li>
+                                        <li>Java</li>
+                                        <li>C, C++</li>
+                                        <li>Assembly</li>
+                                        <li>Sistemas Operativos de Redes</li>
+                                        <li>Bash scripting</li>
+                                        <li>Wireshark</li>
+                                        <li>GNS3 (Graphical Network Simulator-3)</li>
+                                        <li>Cisco packet tracer</li>
+                                        <li>Bases de datos como MySql, postgresql</li>
+                                        <li>Programación funcional como Haskell</li>
+                                    </ul>               
+                                </td>
+                                <td>
+                                    Generalmente los horarios de la materia entan dividos entre mañana, tarde y noche
+                                </td>
+                                <td>
+                                    <li>Desarrollar, gestionar o controla arquitectura de computadoras, componentes electrónicos, la gestión de redes y comunicaciones, señales digitales. Teniendo en cuenta el costo y tiempo.</li>
+                                    <li>Aplicar la ciencia de la tecnología en mejorar productos de hardware y software ya existentes.</li>
+                                    <li>Seguridad Informática en productos de hardware y software</li>
+                                    <li>Participar en asuntos legales, económicos y financieros en el área.</li>
+                                </td>
+                                <td>
+                                    <li>Trabajo Final</li>
+                                    <li>Práctica Profesional Supervisada</li>
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                </div>
+                
+                <h6>Para obtener más información sobre la carrera, inscripción y cuando comienza la cursada haz clic en "Me interesa"</h6>
+            </div>
+
+            <div class="d-flex justify-content-between modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="sendResults('Ingeniería en Computación', false)">No me interesa</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="sendResults('Ingeniería en Computación', true,6)">Me interesa</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!-- Lado de resultado del no -->
+<!-- Licenciatura en Ciencia de la Computación lado no -->
+<div class="modal fade" id="modalResultNoLC" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLabel">Resultados del Test Vocacional</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="container mt-3">
+            <!-- Aquí inserta tu contenido dentro de un div -->
+                <!-- <h5>Dentro de las carreras con <strong>enfoque Teórico</strong> son las carreras que se puede ofrecer, como has seleccionado horarios flexibles, intenta probar con las carreras con <strong>enfoque Práctico</strong></h5> -->
+                <h5>
+                    Lamentamos que los temas preguntados no hayan sido de tu agrado. Si bien se ofrecen carreras con un enfoque teórico, dado que has seleccionado horarios flexibles te animamos a explorar también las opciones con un <strong>enfoque práctico</strong>. Quién sabe, ¡podrías encontrar algo que te apasione aún más!
+                </h5>
+            </div>
+
+            <div class="d-flex justify-content-between modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button class="btn btn-primary"  onclick="reloadTest(4,'No y Reinicio', '#modalResultNoLC')">Reiniciar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tecnicatura W y R lado no -->
+<div class="modal fade" id="modalResultNoTWyR" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLabel">Resultados del Test Vocacional</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="container mt-3">
+            <!-- Aquí inserta tu contenido dentro de un div -->
+                <!-- <h5>Dentro de las carreras con enfoque Práctico con <strong>duración de 3 años</strong> son lo que puede ofrecer la UNSL, intenta probar con las carreras con enfoque Práctico con <strong>duración de 5 años</strong></h5> -->
+                <h5>
+                    Lamentamos que los temas preguntados no hayan sido de tu agrado. Si bien se ofrecen carreras con un enfoque práctico de 3 años, te animamos a explorar también las opciones con un <strong>enfoque práctico que duren 5 años</strong>. Quién sabe, ¡podrías encontrar algo que te apasione aún más!
+                </h5>
+            </div>
+
+            <div class="d-flex justify-content-between modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button class="btn btn-primary"  onclick="reloadTest(questionReload,'No y Reinicio', '#modalResultNoTWyR')">Reiniciar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tecnicatura W y R lado no -->
+<div class="modal fade" id="modalResultNoTWyR2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLabel">Resultados del Test Vocacional</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="container mt-3">
+            <!-- Aquí inserta tu contenido dentro de un div -->
+                <!-- <h5>Dentro de las carreras con enfoque Práctico con <strong>duración de 3 años</strong> son las carreras que se puede ofrecer.</h5> -->
+                <h5>
+                    Lamentamos que los temas preguntados no hayan sido de tu agrado. Si bien se ofrecen carreras con un enfoque práctico de 3 años por el momento. , te animamos a explorar también las opciones con un <strong>enfoque práctico que duren 5 años</strong> o un <strong>enfoque mas teórico que duran entre 3, 4 y 5 años</strong>. Quién sabe, ¡podrías encontrar algo que te apasione aún más!
+                </h5>
+            </div>
+
+            <div class="d-flex justify-content-between modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button class="btn btn-primary"  onclick="reloadTest(questionReload,'No y Reinicio', '#modalResultNoTWyR2')">Reiniciar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!-- Ingeniería en Computación lado no -->
+<div class="modal fade" id="modalResultNoIC" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLabel">Resultados del Test Vocacional</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="container mt-3">
+            <!-- Aquí inserta tu contenido dentro de un div -->
+                <!-- <h5>Dentro de las carreras con enfoque Práctico con <strong>duración de 5 años</strong> son las carreras que se puede ofrecer, intenta probar con las carreras con enfoque Práctico con <strong>duración de 3 años</strong> o puedes probar con las carreras con <strong>enfoque Teórico</strong></h5> -->
+                <h5>
+                    Lamentamos que los temas preguntados no hayan sido de tu agrado. Si bien se ofrecen carreras con un enfoque práctico de 5 años, te animamos a explorar también las opciones con un <strong>enfoque práctico que duren 3 años</strong> o puedes explorar con las carreras con <strong>enfoque teórico</strong>. Quién sabe, ¡podrías encontrar algo que te apasione aún más!
+                </h5>
+            </div>
+
+            <div class="d-flex justify-content-between modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button class="btn btn-primary"  onclick="reloadTest(questionReload,'No y Reinicio', '#modalResultNoIC')">Reiniciar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de finalizcion -->
+<div class="modal fade" id="modalFinalizacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLabel">Test Vocacional: Área de Informática</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="container mt-3">
+            <!-- Aquí inserta tu contenido dentro de un div -->
+                <h4>¡Muchas gracias por realizar esta encuesta!</h4>
+
+                <!-- <h5>En unos momentos debería estar llegando a su email proporcionado <span id="emailEnModal" color="blue"></span> todos los detalles solicitados de la carrera.</h5> -->
+                <h5>La información referente a la carrara sera enviada a su correo <span id="emailEnModal" color="blue"></span>.</h5>
+            </div>
+
+            <div class="d-flex justify-content-between modal-footer">
+                <button type="button" class="btn btn-primary" onclick="reloadPage()">Finalizar</button>
+                <!-- <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="reloadPage()">Volver a hacer el Test</button> -->
+                
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal en caso de que no acepte la carrera -->
+<div class="modal fade" id="modalNoInteres" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLabel">Test Vocacional: Área de Informática</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="container mt-3">
+            <!-- Aquí inserta tu contenido dentro de un div -->
+                <h4>¡Muchas gracias por realizar esta encuesta!</h4>
+                
+                <h5>Lo sentimos que la carrera no sea lo esperado, no te preocupes. Puedes volver a intentar la encuesta presionando el boton Reiniciar.</h5>
+            </div>
+
+            <div class="d-flex justify-content-between modal-footer">
+                <button type="button" class="btn btn-primary" onclick="reloadPage()">Reiniciar</button>
+                <!-- <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="reloadPage()">Volver a hacer el Test</button> -->
+                
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    #emailEnModal {
+        color: blue;
+    }
+</style>

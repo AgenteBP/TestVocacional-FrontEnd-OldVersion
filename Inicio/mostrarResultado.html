@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados del Test Vocacional</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="styleMostrarResultado.css">
+</head>
+<body>
+    <!-- <header class="card-header header">
+        <h1>Test Vocacional: Área Informática</h1>
+        <button class=" btn btn-outline-primary bi bi-box-arrow-right" type="submit">Cerrar Sesión</button>
+    </header> -->
+    <header class="card-header header">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1>Test Vocacional: Área Informática</h1>
+            </div>
+            <div class="col-md-6 text-end d-flex align-items-center justify-content-end mt-3">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        Visualizador
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" onclick="selectOption(1, 'allResults')">Ver todos los resultados</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="selectOption(2,'viewEsResident')">Ver los que residen en la Argentina</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="selectOption(3,'viewEsNoResident')">Ver los que no residen en la Argentina</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="selectOption(4,'viewSchoolInSanLuis')">Ver los estudiantes de las escuelas de San Luis</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="selectOption(5,'graficaBarras')">Ver gráficas de aspirantes por carrera</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="selectOption(6,'graficaBarras')">Ver gráficas de aspirantes no interesado por carrera</a></li>
+                    </ul>
+                </div>
+                &nbsp;
+                <button class="btn btn-outline-primary bi bi-box-arrow-right" onclick="logOut()">Cerrar Sesión</button>
+            </div>
+        </div>
+    </header>
+    <!-- <br> -->
+    <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+        <i class="bi bi-list"></i>
+    </button> -->
+
+    <!-- <label for="busqueda">Buscar por nombre o carrera:</label>
+    <input type="text" id="busqueda"> -->
+    
+    <div class="container-xxl mt-3">
+        <!-- <div class="form-group">
+            <label for="age-filter">Filtrar por edad:</label>
+            <input type="range" class="form-control-range" id="age-filter" min="16" max="99" value="18,99">
+            <output for="age-filter">16 - 99</output>
+          </div>
+        <div id="age-results"></div> -->
+
+        
+
+        <div id="filtrado">
+            <tr>
+                <th scope="col">
+                    <form class="d-flex" onsubmit="filtrarTabla(event)">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">
+                              Edad
+                            </button>
+                            <div class=" dropdown-menu">
+                                <div class="mb-3">
+                                    <label for="rangoEdad">Rango de Edad:</label>
+                                    <div class="my-js-slider"></div>
+                                </div>
+                                <br>
+                                <button id="btnAplicar" type="button" class="btn btn-secondary" onclick="obtenerValores()">Aplicar</button>
+                            </div>
+                        </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <select class="form-select" aria-label="Filtrar por" id="filtroOpcion">
+                            <option selected value="0">Ver Todos</option>
+                            <option value="email">Email</option>
+                            <option value="carreraObtenida">Carrera Obtenida</option>
+                        </select>
+                        &nbsp;
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" id="filtroValor">
+                        &nbsp;
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Interés" id="interesCheckbox" checked>
+                            <label class="form-check-label" for="interesCheckbox">
+                                Interés
+                            </label>
+                        </div>
+                        &nbsp;&nbsp;
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+                </th>
+            </tr>
+        </div>
+
+        <div id="allResults" class="result-view">
+            <table id="miTabla" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Email</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Carrera Obtenida</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los datos se llenarán aquí mediante JavaScript -->
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation example" class="text-center">
+                <ul id="paginacion" class="pagination justify-content-center">
+                    <!-- Los botones de paginación se llenarán aquí mediante JavaScript -->
+                </ul>
+            </nav>
+        </div>
+
+        <div id="viewEsResident" class="result-view" style="display: none;">
+            <table id="tablaEsResidente" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Email</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Provincia</th>
+                        <th scope="col">Carrera Obtenida</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los datos se llenarán aquí mediante JavaScript -->
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation example" class="text-center">
+                <ul id="paginacion2" class="pagination justify-content-center">
+                    <!-- Los botones de paginación se llenarán aquí mediante JavaScript -->
+                </ul>
+            </nav>
+        </div>
+
+        <div id="viewEsNoResident" class="result-view" style="display: none;">
+            <table id="tablaEsNoResidente" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Email</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Pais Origen</th>
+                        <th scope="col">Carrera Obtenida</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los datos se llenarán aquí mediante JavaScript -->
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation example" class="text-center">
+                <ul id="paginacion3" class="pagination justify-content-center">
+                    <!-- Los botones de paginación se llenarán aquí mediante JavaScript -->
+                </ul>
+            </nav>
+        </div>
+
+        <div id="viewSchoolInSanLuis" class="result-view" style="display: none;">
+            <table id="tablaSchoolInSanLuis" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Email</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Escuela</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Carrera Obtenida</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los datos se llenarán aquí mediante JavaScript -->
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation example" class="text-center">
+                <ul id="paginacion4" class="pagination justify-content-center">
+                    <!-- Los botones de paginación se llenarán aquí mediante JavaScript -->
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Elemento canvas para la gráfica -->
+        <!-- <canvas id="graficaBarras" width="250" height="100" ></canvas> -->
+        <div style="display: flex;">
+            <aside>
+                <form class="d-flex flex-column" onsubmit="filterGraph(event)">
+                    <div class="mb-3">
+                        <label for="rangoEdad">Rango de Edad:</label>
+                        <div class="my-js-slider2"></div>
+                    </div>
+        
+                    <div class="mb-3 d-flex flex-column">
+                        <label aria-label="Filtrar por" id="filtroOpcion1">Escuelas a filtrar</label>
+                        <select class="selectpicker form-control"  data-live-search="true"  data-size="10" id="exampleSchool" name="exampleSchool" title='Seleccione una Escuela...'>
+                        </select>
+                        <!-- <input class="form-control me-2" type="search" placeholder="Buscar por escuela" aria-label="Search" id="filtroValorG1"> -->
+                    </div>
+        
+                    <div class="mb-3">
+                        <label aria-label="Filtrar por" id="filtroOpcion2">Edad</label>
+                        <input class="form-control me-2" type="search" placeholder="Buscar por edad" aria-label="Search" id="filtroValorG2">
+                    </div>
+        
+                    <div class="mb-3 form-check">
+                        <input class="form-check-input" type="checkbox" value="Interés" id="interesCheckboxG" checked>
+                        <label class="form-check-label" for="interesCheckbox">Interés</label>
+                    </div>
+        
+                    <div class="mb-3">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </div>
+                </form>
+            </aside>
+        
+            <section style="flex-grow: 1;">
+                <div id="graficaBarras" style="width: 100%; height: 500px;"></div>
+            </section>
+        </div>
+        
+
+    </div>
+
+    <!-- <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="staticBackdropLabel">Menú de opciones de visualización</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body"> 
+            <div>
+                Seleccione el tipo de visualización que desea ver para el test vocacional.
+            </div>
+            <div class="dropdown mt-3">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Visualizador
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" onclick="selectOption(1, 'allResults')">Ver todos los resultados</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="selectOption(2,'viewEsResident')">Ver los que residen en la Argentina</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="selectOption(3,'viewEsNoResident')">Ver los que no residen en la Argentina</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="selectOption(4,'graficaBarras')">Ver gráficas</a></li>
+                </ul>
+            </div>
+        </div>
+    </div> -->
+
+
+    <footer class="text-center footer" id="footer1">
+        <div class="container">
+            <h7>Hecho por Braian Paez - UNSL</h7>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="sesionExpiradaModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Sesión expirada</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Sesión expirada, por favor vuelva a iniciar sesión para seguir usando explorando.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="volverBtn">Volver</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script> -->
+
+<!-- <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>   -->
+
+<!-- Select with search -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+<!-- wRunner CSS -->
+<link rel="stylesheet" href="filterofEdad/wrunner-default-theme.css">
+<!-- wRunner Vanilla JS -->
+<script src="filterofEdad/wrunner-native.js"></script>
+<!-- wRunner jQuery -->
+<script src="filterofEdad/wrunner-jquery.js"></script>
+<!-- Any chart -->
+<script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-pie.min.js"></script>
+
+<script src="displayResults.js"></script>
+
+<script>
+
+var selectSchool = document.getElementById("exampleSchool");
+
+var schoolsInSanLuis = [
+            "Esc N° 51 F. Segundo Mendoza",
+            "Esc N° 9 A.P.A.D.I.S",
+            "Ctro. Ed. N° 28 Rene Favaloro",
+            "Ctro Ed N° 23 Dr C.J.Rodriguez",
+            "Esc N°77 Maestros Puntanos",
+            "Col N°4 Fray Luis Beltran",
+            "Esc N°7 Constanzo C. Vigil",
+            "Esc N°98 Gob.Jose Santos Ortiz",
+            "Esc N°314 La Rioja",
+            "Inst De Formacion Doc Cont",
+            "Esc N°9 Esteban Adaro",
+            "Col N°10 Martin M Guémes",
+            "Esc. Nº 7 M. Belgrano",
+            "Esc N° 184 Belgrano",
+            "Col N° 12 R.Carrillo",
+            "Esc. Nº 1 Dra Carolina Tobar Garcia",
+            "Colegio 36 Bernardo A. Houssay",
+            "Esc. Nº 342 C Del Peregrino I Prim",
+            "Col Nº 35 C Del Peregrino II Sec",
+            "Esc. N° 2 Puertas Del Sol",
+            "Esc. Tec Nº 5 Alvarez Condarco",
+            "Esc N°49 Gdor. Lindor Quiroga",
+            "Esc. N° 2 Nicolas A. De San Luis",
+            "Esc N° 70 Pcia.De San Luis",
+            "Unsl Edificio Bloque I",
+            "Esc Nº 175 Gral.San Martin",
+            "Esc N Mixta J.P.Pringles",
+            "Centro Ed Nº 1 J.Pascual Pringles",
+            "Esc N° 427 Pcia.De Cordoba",
+            "Colegio San Luis Rey De Francia",
+            "Esc N° 8 Sargento Baigorria",
+            "Univ.Catolica De Cuyo",
+            "Esc N° 5 B.Mitre",
+            "Esc Nº 3 Manuel Belgrano",
+            "Ctro. Ed. Nº 2 P.D. Bazan",
+            "Esc N° 313 Rosario M. Simon",
+            "Esc N° 2 Bernardino Rivadavia",
+            "Esc. N° 172 Misiones",
+            "Esc N° 27 S.Camarero",
+            "Ctro.Educ.N° 3 Eva Peron",
+            "Esc N° 6 Sta.Maria Eufrasia",
+            "Esc Nº 16 Maria Delia Gatica",
+            "Esc Nº 17 Polo Godoy Rojo",
+            "Esc Tec N° 9 D.F.Sarmiento",
+            "Esc N°24 Pancha Hernandez",
+            "Esc. Nº 4 Juan Tulio Zabala",
+            "Colegio Nº 38 Marie Curie",
+            "Escuela Nº 5 Modelo San Luis",
+            "C.D. Nº 21 Puerta De Cuyo",
+            "Colegio N°13 R.Moyano",
+            "Esc. Tec N° 37 G.Ave Lallemant",
+            "Escuela N°264 Juan Martin De P",
+            "Esc Nº 139 B.Mitre",
+            "Esc Nº 23 H.Rodriguez Saa",
+            "Epa Nº 1 Rosenda Quiroga",
+            "Colegio 40 Heroes De Malvinas",
+            "Esc.434 Nuevos Desafios",
+            "Esc. Nelson Mandela",
+            "Epa Nº 14 Martin L King Secundario",
+            "Epa Nº 13 Esther Guevara Primaria",
+            "Centro E.N°6 'Sadoc S.Martin'",
+            "Escuela N° 267 Gdor.E.Mendoza",
+            "Esc N° 22 Bernardo O'Higgins",
+            "Esc. Nº 323 Juan W Gez",
+            "Escuela N° 141 Los Andes",
+            "Escuela N° 17 L. Jofre Y Menese",
+            "Escuela N° 10 Juan E. Vaca",
+            "Escuela N° 311 Luis Jofre",
+            "Municipio Desaguadero",
+            "Hogar N° 436 Juan Jose Paso",
+            "Centro Educ.N° 16 Tucuman",
+            "Escuela N° 337 Indep.Argentina",
+            "Escuela N° 13 Ant. Argentina",
+            "Hogar Esc.N° 22 Gdor.L.Landaburu",
+            "Escuela N° 142 Gdor.S.Besso",
+            "Esc N°441 Cap De F.P.E.Giachino",
+            "Escuela N°113 J.A.Ortiz Estrada",
+            "Ctro.Ed N°22 Urbano J Nuñez",
+            "Esc N°357 Maximo Camargo",
+            "Esc Tec N°28 J.M.De Pueyrredon",
+            "Colegio N°3 Manuel Belgrano",
+            "Esc. N°114 Dr.R.Gutierrez",
+            "Esc.Hogar N°11 Gran.J.R.Aguirre",
+            "Ex Esc.N°217 Maria R. De Astudillo",
+            "Esc N°204 Maest.N.Villegas",
+            "Esc N°201 Daniel Villegas",
+            "Esc. N°202 Gdor.G.Mendoza",
+            "Esc. N°146 Gran.T.Cuello",
+            "Ctro.Educ.N°5 Sen.A.Bertin",
+            "Esc N°179 Ejerc.Argentino",
+            "Esc N°381 Soldado Puntano",
+            "Ex.Esc.N°120 R.B.Pastor/Actual Epd Nº2 Estancia Grande-Primario",
+            "Ex.Esc. Nº145 Patricio Guanca/Actual Epd Nº2 Estancia Grande-Secundario",
+            "Esc N°328 H.P.Del ARA.G.Belgrano",
+            "Int. Ntra Señora Del Carmen",
+            "Epa N°10 M.E.V.Lucero-Primaria",
+            "Esc.Dig Bilingue M Gandhi",
+            "Epa N°10 M.E.V.Lucero-Secundar",
+            "Esc N°176 Maestra N.E.Perez De Fer",
+            "Epa Nº 7 E. Galeano",
+            "Esc Tec N°20 Antonio Berni",
+            "Esc N°106 Prof.T. Ferrari",
+            "Esc Tec N°15 Ing. A. Mercau",
+            "Esc. N°187 Jose Hernandez",
+            "Esc Nº 18 Nicolasa Berrondo De",
+            "Esc N°40 Ricardo Rojas",
+            "Esc. N°147 Prov. De Mendoza",
+            "Esc. N°240 Prov. De Corrientes",
+            "Universidad Catolica De Cuyo",
+            "Esc. N°33 Vicente Dupuy",
+            "Esc N°29 R.De Esc.De S.Martin",
+            "Col. Nº 2 Juan Esteban Pedernera",
+            "Esc N° 444 M.Eva D.De Peron",
+            "Ifdc",
+            "Centro Educ.N°9 Dr.J.Llerena",
+            "Esc. N°31 Mariano Moreno",
+            "Esc Nº 32 Justo Daract",
+            "Colegio N°11 B. Juarez",
+            "Esc Nº 30 Gral. Pedernera",
+            "Escuela N°388 Sgto. E.Romero",
+            "Esc. N°43 Dr. Tomas Jofre",
+            "Esc. N°152 Alas Argentinas",
+            "Esc. N° 371 Juan B. Alberdi",
+            "C. Ed Nº 20 Juan W.Gez",
+            "Epa Nº 6 Pf.Sor. L.R.Barroso",
+            "Esc. N°69 Mtra. O.E.Sarden",
+            "Centro Educ. N°10 R.Podetti",
+            "Esc. N° 431 Nely Chenau De Vecino",
+            "Esc N° 151 Pcia.De T.Del Fuego",
+            "Esc N°324 F.Muñoz De Fourcade",
+            "Esc N°200 Cap Fausto Gavazzi",
+            "Esc Nº 37 J.B.Alberdi",
+            "Esc N°429 Gregorio Aguero",
+            "Esc Tec N° 16 Jesus Obrero",
+            "Ctro.Educ.N°11 S.Cortinez",
+            "Esc N°272 Capital Federal",
+            "Esc. Nº 82 Gral Las Heras",
+            "Esc Tec N° 21 Maria Auxiliadora",
+            "Esc.Hogar N° 6 Dr.V.Luco",
+            "Esc N° 38 Gral.P.Lucero",
+            "Esc N° 210 Gral.Pedernera",
+            "Esc.Pcial.N° 270 A Del C Bazan",
+            "Esc N° 271 Cautivas Puntanas",
+            "Esc. Tec N° 17 V.Brigada Aerea",
+            "Esc N° 411 C.A.De San Juan",
+            "Esc. N°251 Santiago Del Estero",
+            "Esc.417 F.Navarro",
+            "Esc. N°73 Los Tres Granaderos",
+            "Esc. N° 76 L.Quiroga De Lucero",
+            "Esc N°74 Ben. Rodriguez Jurado",
+            "Col.Nº 27 Dr. Eleodoro Lobos",
+            "Cen Educ. N°14 D.O. De Masramon",
+            "Esc. N°225 Mtro. Pio R.Flores",
+            "C. Edu N°13 Rosa Burgos Aguirre",
+            "Esc. N°250 Tomas Espora",
+            "Escuela 277 Gral Belgrano",
+            "Esc. N°278 Gral F Lucero",
+            "C Educ. N°18 C. Rosales(EX ESC.103)",
+            "Esc.N°285 Gdro.D.Ortiz",
+            "Esc. N°104 D.F.Sarmiento",
+            "Esc N°215 Mntro.A.M.Garro",
+            "Esc N°178 J.I.Pedernera",
+            "Esc N°213 Maestros Sanluiseños",
+            "Esc N°362 Gdro.M.Perez",
+            "Esc N°249 C.Garcia Torres",
+            "Esc.Nº 442 A.Rodriguez Saa",
+            "Esc N°156 Gdro.Jose G.Bustos",
+            "C.Edu.N°17 H. Irigoyen (Ex Esc. N° 64)",
+            "Esc 398 Justo Daract",
+            "Esc N°395 Granadero V.Concha",
+            "Esc N°158 Jose M.Estrada",
+            "Esc. Hogar N° 7 J.C.Lafinur",
+            "Esc N° 220 H.De Ayohuma",
+            "Esc N° 219 A.Del C.G.Velez",
+            "Esc N° 295 M.E.S.De Amodey",
+            "Epa N° 9 Dr. H.De La Motta",
+            "Esc N° 435 Pueblo Comechingon",
+            "Esc N° 181 San Jose De Calazan",
+            "Esc N° 288 Antonio E.Aguero",
+            "Inst.Monseñor Orzali",
+            "Centro Ed.N°27 Gdor.S.Besso",
+            "Centro Ed.N°26 M.P.De Becerra",
+            "Esc N° 221 I.Romero De Pacheco",
+            "Esc N° 159 Pcia.De Jujuy",
+            "Esc N° 237 M.T.Chirino",
+            "Esc N° 223 G.J.M.Pringles",
+            "Esc N° 48 F.Berrondo",
+            "Ctro.Educ.N° 19 F.D.Sarmiento",
+            "Esc N° 296 Prof.C.Carletti",
+            "Esc N° 298 Mtro.E.Daract",
+            "Esc. N° 171 Pintor M.Muñoz",
+            "Esc N° 290 Dir.Teofilo Gatica",
+            "Esc N° 259 Vicedir.J.T.Lucero",
+            "Esc. Tec N° 30 Fragata P Sarmiento",
+            "Inst. San Jose",
+            "Esc N°50 Eulalio Astudillo",
+            "Esc.95 Victor Mercante",
+            "Esc N° 199 Pcia.De Buenos Aires",
+            "Esc N° 196 Mtra.M.De Ramirez",
+            "Esc N° 236 Vicedir.J.Belzunce",
+            "Esc N° 61 S.R.Domingo Matheu",
+            "Esc N° 198 P.Federal Argentina",
+            "Esc N° 292 Dip.R.Paez Montero",
+            "Esc N° 84 Dalmiro S.Adaro",
+            "Esc N° 224 Mtro.V.Guiñazu",
+            "Esc N° 308 Nicolas Avellaneda",
+            "Esc. 303 Sebastian Muñoz",
+            "Ctro.Ed.N° 25 J.J.De Urquiza",
+            "Esc. N° 85 Alvarez Condarco",
+            "Esc Nº 310 Gob R Rodriguez Saa",
+            "Hogar Esc.N° 20 Pol.Puntana",
+            "Ex Esc.N° 336 Mtro.Diog.Taboada",
+            "Esc N° 127 San Lorenzo",
+            "Hogar Esc.N° 4 Mtro.J.M.Tissera",
+            "Ctro.Educ.N° 7 Geol.R.Guiñazu",
+            "Esc. N° 302 Mtro.Celestino Jofre",
+            "Esc N° 306 Gob.Zoilo Concha",
+            "Esc N° 191 Pcia.De La Pampa",
+            "Esc.Epem N° 4 Cortes Aparicio",
+            "Hogar Esc.N° 9 P.A.De Sarmiento",
+            "Esc N° 422 Prof.E.F.De Gomez",
+            "Esc N° 440 Sarmiento",
+            "Esc N°149 Lainez",
+            "Esc N°188 Santa Cruz",
+            "Esc N° 438 B.Rivadavia",
+            "Col.22 J.M.Estrada",
+            "Esc N° 243 Rio Negro",
+            "Esc.Hogar 16 Gderos.Puntanos",
+            "Hogar Esc.N° 10 Neuquen",
+            "Esc N° 45 J.De Dios Escobar",
+            "Hogar Esc.N° 13 F.A.Argentina",
+            "Esc. Hogar Nº 18 M M P De Grillo"
+        ];
+
+// Agregar opciones al select
+for (var i = 0; i < schoolsInSanLuis.length; i++) {
+    var option = document.createElement("option");
+    option.text = schoolsInSanLuis[i];
+    selectSchool.add(option);
+}
+
+$('#exampleSchool').selectpicker();
+</script>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styleLaunch.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="Imagenes/logo-unsl.png" alt="UNSL Informática Logo" width="150">
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class=" btn btn-primary btn-sm" role="button" onclick="showResults()">Iniciar Sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="display-4">Bienvenidos al Test Vocacional</h1>
+                <p class="lead">Área de Informática de la UNSL</p>
+                <p>
+                    <a href="registroA.html" class="btn btn-primary btn-lg">Empezar el test</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal fade" id="resultsModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="needs-validation" novalidate>
+                        <div class="form-group">
+                            <label for="username" class="form-label">Usuario:</label>
+                            <input type="text" class="form-control" id="username" placeholder="Ingrese su usuario" required>
+                            <div class="valid-feedback">
+                            </div>
+                            <div class="invalid-feedback">
+                                Por favor, ingrese su usuario.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="form-label">Contraseña:</label>
+                            <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña" required>
+                            <div class="valid-feedback">
+                            </div>
+                            <div class="invalid-feedback">
+                                Por favor, ingrese su contraseña.
+                            </div>
+                        </div>
+    
+                        <button class="btn btn-primary" type="button" onclick="submitLogin(event)">Iniciar Sesión</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Acceso no autorizado -->
+    <div class="modal fade" id="sesionNoAutorizadoModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Acceso no autorizado</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Se ha ingresado incorrecto el usuario o contraseña. Por favor revise los datos ingresados.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="url.js"></script>
+<script src="login.js"></script>
+<script>
+    localStorage.setItem('flagDatos', 0);
+    document.addEventListener('DOMContentLoaded', function() {
+        // Obtén el nombre de usuario del parámetro en la URL
+        const userName = localStorage.getItem('userName');
+        console.log("username tieneeee ", userName);
+
+        // Si el nombre de usuario está definido, establece el valor del campo de entrada
+        if (userName) {
+            document.getElementById('username').value = userName;
+        }
+    });
+    
+</script>
